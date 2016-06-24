@@ -1,0 +1,37 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Hello Dolly For Your Song\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Marco Hitschler <marco.hitschler@neulicht.de>\n"
+"Language-Team: Marco Hitschler\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"Language: German\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "Which song do you like?"
+msgstr "Welches Lied magst du?"
+
+msgid "What song touched you?"
+msgstr "Welches Lied berührt dich?"
+
+msgid "What song brings you back fond memories?"
+msgstr "Welches Lied bringt dir schöne Erinnerungen zurück?"
+
+msgid "Enter the lyrics into the form."
+msgstr "Schreib den Liedtext in das Formular."
+
+msgid "Settings saved!"
+msgstr "Einstellungen gespeichert!"
+
+msgid "Use the random lines in articles and pages:"
+msgstr "Nutze die zufällige Zeile in Artikel und Seiten:"
+
+msgid "Show a custom line of your text"
+msgstr "Zeige eine zufällige Zeile deines Texts"

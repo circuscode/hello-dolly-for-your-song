@@ -6,9 +6,8 @@ Tested up to: 4.6
 Stable tag: 0.7
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
-Donate link: httts://www.unmus.de
 
-This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows a random line of the any text in your blog.
+This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows the songtext of any song in your blog.
 
 == Description ==
 

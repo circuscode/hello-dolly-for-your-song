@@ -1,43 +1,88 @@
 <?php
 
 /*
-@package Hello_Dolly_For_Your_Song
-@version 0.6
-
-Plugin Name: Hello Dolly For Your Song
-Description: This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. Every human being has a special connection to a particular song. And because of that, Hello Dolly For Your Song brings the lyric of your favourite song to the admin screen, articles and pages.
-Plugin URI: http://wordpress.org/extend/plugins/hello-dolly-for-your-song/
-Version: 0.6
-License: GPLv3
-Author: Marco Hitschler
-Author URI: http://www.unmus.de/
+Plugin Name:  Hello Dolly For Your Song
+Plugin URI:   https://www.unmus.de/wordpress-plugin-hello-dolly-for-your-song/
+Description:  This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows the songtext of any song in your blog. 
+Version:	  0.7
+Author:       Marco Hitschler
+Author URI:   https://www.unmus.de/
+License:      GPL3
+License URI:  https://www.gnu.org/licenses/gpl-3.0.html
+Domain Path:  /languages
+Text Domain:  hdfys
 */
 
 /*
 Basic Setup
 */
 
-// Wordpress Action
-add_action( 'admin_notices', 'hdfys' );
-add_action( 'admin_head', 'hdfys_css' );
-add_action( 'admin_menu', 'hdfys_show_options');
-add_action( 'widgets_init', 'register_hdfys_widget' );
-
-// Localization
 load_plugin_textdomain('hellodollyforyoursong', false, 'hello-dolly-for-your-song');
+
+/*
+Installation
+*/
+
+function hdfys_activate () {
+		
+	if (! get_option('hdfys_activated') ) {
+	
+	/* Initialize Settings */
+	
+	add_option('hdfys_activated',"1");
+	add_option('hdfys_song', "");
+	add_option('hdfys_version', "7");
+	add_option('widget_hdfys_widget');
+
+	}
+}
+register_activation_hook( __FILE__ , 'hdfys_activate' );
+
+function hdfys_deactivate () {
+
+}
+register_deactivation_hook( __FILE__ , 'hdfys_deactivate' );
+
+function hdfys_delete () {
+
+		if ( get_option('hdfys_activated') ) {
+
+		delete_option('hdfys_activated');
+		delete_option('hdfys_song');
+		delete_option('hdfys_version');
+		delete_option('widget_hdfys_widget');
+
+	}
+	
+}
+register_uninstall_hook( __FILE__ , 'hdfys_delete' ); 
+
+function hdfys_update () {
+	
+    $hdfys_previous_version = get_option('hdfys_version');
+	
+	/* Update Process Version 0.7 */ 
+    if($hdfys_previous_version==false) {
+	add_option('hdfys_activated',"1");
+	add_option('hdfys_version', "7");  
+
+	$lyrics = get_option('hdfys_song');
+	$lyrics = stripcslashes($lyrics);
+	update_option('hdfys_song',$lyrics);
+	}
+	
+} 
+
+add_action( 'plugins_loaded', 'hdfys_update' );
 
 /*
 Content Functions
 */
 
-// Get the lyric
 function hdfys_get_lyric() {
 	
 	// First we fetch the lyric
 	$lyrics = get_option('hdfys_song');
-	
-	// Remove the slashes
-	$lyrics = stripcslashes($lyrics);
 	
 	// Here we split it into lines
 	$lyrics = explode( "\n", $lyrics );
@@ -46,7 +91,6 @@ function hdfys_get_lyric() {
 	return wptexturize( $lyrics[ mt_rand( 0, count( $lyrics ) - 1 ) ] );
 }
 
-// Get Hello Dolly
 function hdfys_get_hello_dolly() {
 	
 	/* Hello Dolly Lyric */
@@ -83,24 +127,22 @@ function hdfys_get_hello_dolly() {
 	$hdfys_hello_dolly = explode( "\n", $hdfys_hello_dolly );
 
 	// And then randomly choose a line
-	return wptexturize( $hdfys_hello_dolly[ mt_rand( 0, count( $hdfys_hello_dolly ) - 1 ) ] );;
+	return wptexturize( $hdfys_hello_dolly[ mt_rand( 0, count( $hdfys_hello_dolly ) - 1 ) ] );
 }
 
 /*
-Display of the songtext lines in the admin head
+Display of the songtext @ admin head
 */
 
-// This just echoes the line, if no songtext is stored, Hello Dolly is used
 function hdfys() {	
 	$text = get_option('hdfys_song');
 	$text = strlen($text);
 	$line = ($text > 0) ? hdfys_get_lyric() : hdfys_get_hello_dolly() ;
 	echo "<p class='admin-hdfys'>".$line."</p>";
 }
+add_action( 'admin_notices', 'hdfys' );
 
-// We need some CSS to position the paragraph
 function hdfys_css() {
-	// This makes sure that the positioning is also good for right-to-left languages
 	$x = is_rtl() ? 'left' : 'right';
 	echo "
 	<style type='text/css'>
@@ -114,50 +156,55 @@ function hdfys_css() {
 	</style>
 	";
 }
+add_action( 'admin_head', 'hdfys_css' );
 
 /*
 Options Page
 */
 
-// Display and Process of the Options Page
 function hdfys_options() {
+	
 	echo '
 	<div class="wrap">
-	<h2>Hello Dolly For Your Song</h2>
-	';
-	if(isset($_POST['hdfys'])) {
-		$your_song = $_POST['your_song'];
-		$your_song = preg_replace("/[\r\n]+[\s\t]*[\r\n]+/","\n", $your_song);
-		update_option('hdfys_song', $your_song);
-		echo '		
-		<div class="updated fade">
-		<p><strong>'. __('Settings saved!','hellodollyforyoursong').'</strong></p> 
-		</div>';
-	}
-	$your_song = (get_option('hdfys_song') != false) ? get_option('hdfys_song') : "";
-	$your_song = stripcslashes($your_song);
-	echo '
-	<p>'. __('Which song do you like?','hellodollyforyoursong').'<br/>'. __('What song touched you?','hellodollyforyoursong').'<br/>'. __('What song brings you back fond memories?','hellodollyforyoursong').'</p>
-	<p>'. __('Enter the lyrics into the form.','hellodollyforyoursong').'</p>
-	<form name="songtext" method="post" action="" style="float:left;margin-right:20px;">
-	<textarea name="your_song" style="width:600px;height:400px;">'.$your_song.'</textarea>
-	<p class="submit">
-	<input type="submit" class="button-primary" name="hdfys" value="Save" />
-	</p>
-	</form>
-	<div>
-	<p><strong>Shortcode</strong>
-	</p><p>'. __('Use the random lines in articles and pages:','hellodollyforyoursong').'
-	</p><p>[hdfys]</p>
-	</div
-	</div>
-	';
+	<h1>'. __('Options','hellodollyforyoursong').' › Hello Dolly For Your Song</h1>
+	
+	<form method="post" action="options.php">';
+	
+	do_settings_sections( 'hdfys-options' );
+	settings_fields( 'hdfys_settings' );
+	submit_button();
+
+	echo '</form></div><div class="clear"></div>';
 }
 
-// Add the options page to the admin panel
+function hdfys_options_display_songtext()
+{
+	echo '<textarea style="width:600px;height:400px;" class="regular-text" type="text" name="hdfys_song" id="hdfys_song" value="'. get_option('hdfys_song') .'">'. get_option('hdfys_song') .'</textarea>';
+}
+
+function hdfys_options_content_description()
+{ echo '<p>'. __('Post your lyrics','hellodollyforyoursong').'</p>'; }
+
+function hdfys_options_display()
+{
+	
+	add_settings_section("content_settings_section", __('Songtext','hellodollyforyoursong') , "hdfys_options_content_description", "hdfys-options");
+	
+	add_settings_field("hdfys_song", __('Text','hellodollyforyoursong') , "hdfys_options_display_songtext", "hdfys-options", "content_settings_section");
+	
+	register_setting("hdfys_settings", "hdfys_song", "hdfys_validate_songtext");
+}
+add_action("admin_init", "hdfys_options_display");
+
+function hdfys_validate_songtext ( $songtext ) {
+    
+    return $songtext;
+} 
+
 function hdfys_show_options() {
 add_options_page('Hello Dolly For Your Song', 'Hello Dolly Your Song', 10, basename(__FILE__), "hdfys_options");
 }
+add_action( 'admin_menu', 'hdfys_show_options');
 
 /*
 Widget
@@ -216,6 +263,7 @@ class hdfys_widget extends WP_Widget {
 function register_hdfys_widget() {
     register_widget( 'Hdfys_widget' );
 }
+add_action( 'widgets_init', 'register_hdfys_widget' );
 
 /*
 Shortcode

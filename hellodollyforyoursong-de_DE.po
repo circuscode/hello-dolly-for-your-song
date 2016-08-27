@@ -11,8 +11,8 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
-"Language: German\n"
-"X-Generator: Poedit 1.5.5\n"
+"Language: de\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-SearchPath-0: .\n"
 
 msgid "Which song do you like?"
@@ -35,3 +35,15 @@ msgstr "Nutze die zufällige Zeile in Artikel und Seiten:"
 
 msgid "Show a custom line of your text"
 msgstr "Zeige eine zufällige Zeile deines Texts"
+
+msgid "Options"
+msgstr "Einstellungen"
+
+msgid "Songtext"
+msgstr "Songtext"
+
+msgid "Post your lyrics"
+msgstr "Hinterlege einen Songtext"
+
+msgid "Text"
+msgstr "Text"

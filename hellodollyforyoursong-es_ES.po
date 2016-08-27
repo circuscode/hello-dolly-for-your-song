@@ -35,3 +35,15 @@ msgstr "Use las líneas aleatorias en artículos y páginas:"
 
 msgid "Show a custom line of your text"
 msgstr "Mostrar una línea personalizada de su texto."
+
+msgid "Options"
+msgstr "Configuración"
+
+msgid "Songtext"
+msgstr "Letra"
+
+msgid "Post your lyrics"
+msgstr "Publicar sus letras"
+
+msgid "Text"
+msgstr "Texto"

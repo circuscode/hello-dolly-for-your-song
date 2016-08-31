@@ -3,8 +3,8 @@
 /*
 Plugin Name:  Hello Dolly For Your Song
 Plugin URI:   https://www.unmus.de/wordpress-plugin-hello-dolly-for-your-song/
-Description:  This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows the songtext of any song in your blog. 
-Version:	  0.7
+Description:  This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows a random line of any songtext in your blog. 
+Version:	  0.8
 Author:       Marco Hitschler
 Author URI:   https://www.unmus.de/
 License:      GPL3
@@ -17,7 +17,7 @@ Text Domain:  hdfys
 Basic Setup
 */
 
-load_plugin_textdomain('hellodollyforyoursong', false, 'hello-dolly-for-your-song');
+load_plugin_textdomain('hellodollyforyoursong', false, dirname( plugin_basename( __FILE__ ) ) . '/languages');
 
 /*
 Installation
@@ -30,8 +30,8 @@ function hdfys_activate () {
 	/* Initialize Settings */
 	
 	add_option('hdfys_activated',"1");
-	add_option('hdfys_song', "");
-	add_option('hdfys_version', "7");
+	add_option('hdfys_song');
+	add_option('hdfys_version', "8");
 	add_option('widget_hdfys_widget');
 
 	}
@@ -39,7 +39,7 @@ function hdfys_activate () {
 register_activation_hook( __FILE__ , 'hdfys_activate' );
 
 function hdfys_deactivate () {
-
+	// nothing to do
 }
 register_deactivation_hook( __FILE__ , 'hdfys_deactivate' );
 
@@ -65,14 +65,16 @@ function hdfys_update () {
     if($hdfys_previous_version==false) {
 	add_option('hdfys_activated',"1");
 	add_option('hdfys_version', "7");  
-
 	$lyrics = get_option('hdfys_song');
 	$lyrics = stripcslashes($lyrics);
 	update_option('hdfys_song',$lyrics);
 	}
+	/* Update Process Version 0.8 */ 
+    if($hdfys_previous_version==7) {
+	update_option('hdfys_version','8');
+	}
 	
 } 
-
 add_action( 'plugins_loaded', 'hdfys_update' );
 
 /*
@@ -177,18 +179,17 @@ function hdfys_options() {
 	echo '</form></div><div class="clear"></div>';
 }
 
-function hdfys_options_display_songtext()
-{
-	echo '<textarea style="width:600px;height:400px;" class="regular-text" type="text" name="hdfys_song" id="hdfys_song" value="'. get_option('hdfys_song') .'">'. get_option('hdfys_song') .'</textarea>';
+function hdfys_options_display_songtext() {
+	echo '<textarea style="width:600px;height:400px;" class="regular-text" type="text" name="hdfys_song" id="hdfys_song">'. get_option('hdfys_song') .'</textarea>';
 }
 
-function hdfys_options_content_description()
-{ echo '<p>'. __('Post your lyrics','hellodollyforyoursong').'</p>'; }
+function hdfys_options_content_description() { 
+	echo '<p>'. __('Post your lyrics.','hellodollyforyoursong').'</p>'; 
+}
 
-function hdfys_options_display()
-{
+function hdfys_options_display() {
 	
-	add_settings_section("content_settings_section", __('Songtext','hellodollyforyoursong') , "hdfys_options_content_description", "hdfys-options");
+	add_settings_section("content_settings_section", __('Just one thing','hellodollyforyoursong') , "hdfys_options_content_description", "hdfys-options");
 	
 	add_settings_field("hdfys_song", __('Text','hellodollyforyoursong') , "hdfys_options_display_songtext", "hdfys-options", "content_settings_section");
 	
@@ -197,12 +198,12 @@ function hdfys_options_display()
 add_action("admin_init", "hdfys_options_display");
 
 function hdfys_validate_songtext ( $songtext ) {
-    
+
     return $songtext;
 } 
 
 function hdfys_show_options() {
-add_options_page('Hello Dolly For Your Song', 'Hello Dolly Your Song', 10, basename(__FILE__), "hdfys_options");
+	add_options_page('Hello Dolly For Your Song', 'Hello Dolly Your Song', 10, basename(__FILE__), "hdfys_options");
 }
 add_action( 'admin_menu', 'hdfys_show_options');
 
@@ -210,10 +211,10 @@ add_action( 'admin_menu', 'hdfys_show_options');
 Widget
 */
 
-// The unbelievable widget ;-)
+// The Unbelievable Widget ;-)
 class hdfys_widget extends WP_Widget {
 	
-	// widget actual processes
+	// Definition
 	public function __construct() {
 		parent::__construct(
 		'hdfys_widget', 
@@ -222,7 +223,7 @@ class hdfys_widget extends WP_Widget {
 		);
 	}
 
-	// widget output
+	// Output
 	public function widget( $args, $instance ) {
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		$widget_text = get_option('hdfys_song');
@@ -237,7 +238,7 @@ class hdfys_widget extends WP_Widget {
 		echo '</aside>';
 	}
 
-	// widget form
+	// Form
 	public function form( $instance ) {
 		if ( isset( $instance[ 'title' ] ) ) {
 			$title = $instance[ 'title' ];
@@ -250,7 +251,7 @@ class hdfys_widget extends WP_Widget {
 		<?php 
 	}
 
-	// widget settings update
+	// Update
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
@@ -259,7 +260,6 @@ class hdfys_widget extends WP_Widget {
 
 }
 
-// Register widget
 function register_hdfys_widget() {
     register_widget( 'Hdfys_widget' );
 }
@@ -269,7 +269,7 @@ add_action( 'widgets_init', 'register_hdfys_widget' );
 Shortcode
 */
 
-// The unbelievable shortcode ;-)
+// The Unbelievable Shortcode ;-)
 function hdfys_shortcode() {
 	$shortcode_text = get_option('hdfys_song');
 	$shortcode_length = strlen($shortcode_text);
@@ -277,5 +277,17 @@ function hdfys_shortcode() {
 	return '<p class="hdfys shortcode">'. $shortcode_line .'</p>';
 }
 add_shortcode('hdfys','hdfys_shortcode');
+
+/*
+Template Tag
+*/
+
+// The Unbelievable Template Tag
+function hello_dolly_for_your_song() {
+	$hdfys_text = get_option('hdfys_song');
+	$hdfys_text_length = strlen($hdfys_text);
+	$hdfys_template_tag_output = ($hdfys_text_length > 0) ? hdfys_get_lyric() : hdfys_get_hello_dolly() ;
+	return '<div class="hdfys templatetag">'. $hdfys_template_tag_output .'</div>';
+}
 
 ?>

@@ -1,30 +1,31 @@
 === Hello Dolly For Your Song ===
 Contributors: unmus
-Tags: hello dolly, love, widget, music, song, random, text, shortcode
+Tags: hello dolly, love, widget, music, song, random, text, shortcode, lyric, template tag
 Requires at least: 4.0
 Tested up to: 4.6
-Stable tag: 0.7
+Stable tag: 0.8
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows the songtext of any song in your blog.
+This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows a random line of any songtext in your blog. 
 
 == Description ==
 
-This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg (inventor of wordpress). Every human being has a special connection to a particular song. And because of that, Hello Dolly For Your Song brings the lyric of your favourite song in the blog and to the admin screen. But of course it can be used for any text. ;-)
+This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg (inventor of wordpress). Every human being has a special relationship to a particular song. And because of that, Hello Dolly For Your Song brings the lyric of your favourite song in the blog. But of course it can be used for any text. ;-)
 
 = Features =
 
 * Display a random line of a custom text in your blog as widget
 * Display a random line of a custom text in your blog as shortcode
+* Display a random line of a custom text in your theme as template tag
 * Display a random line of a custom text in the blog administration
 * Options Page to define a custom song text
 * Languages: English, German, Spanish
 
 = Related Links =
 
-<a href="http://www.unmus.de/wordpress-plugin-hello-dolly-for-your-song/">Official Plugin Page</a> (German)
-<a href="http://www.unmus.de/hello-dolly-for-your-song/">Why I have created this plugin?</a> (German)
+* <a href="http://www.unmus.de/wordpress-plugin-hello-dolly-for-your-song/">Official Plugin Page</a> (German)
+* <a href="http://www.unmus.de/hello-dolly-for-your-song/">Why I have created this plugin?</a> (German)
 
 = Thank You =
 
@@ -33,31 +34,33 @@ Andrew Kurtis and <a href="http://www.webhostinghub.com/">WebHostingHub</a> for 
 == Installation ==
 
 1. Upload plugin folder to the /wp-content/plugins/ directory
-2. Activate the plugin through the Plugins menu in WordPress
-3. Then go to settings > Hello Dolly Your Song to configure your songtext
-
-Step 1 can be replaced by the download from the plugin directory within wordpress.
+2. Activate the plugin through the plugins menu in WordPress
+3. Go to Settings > Hello Dolly Your Song to configure your songtext
 
 == Frequently Asked Questions ==
 
-= I have not maintained any songtext, nevertheless some text will be displayed in the admin head. =
+= I have not maintained a songtext, nevertheless some lyrics is displayed in the admin head. =
 
-This is Hello Dolly by Louis Armstrong. If not any text is maintained in the options, the programm uses the songtext of Hello Dolly.
+This is Hello Dolly by Louis Armstrong. If no text is maintained in the options, the programm uses the songtext of Hello Dolly.
 
 = How can I use the shortcode? =
 
-Type [hdfys] in a blank line (this is important) in your articles and pages.
+Type [hdfys] in a blank line in the WordPress editor.
 
 = How can I bring the widget in the blog with a custom widget title? =
 
 You can define the title in the settings of the widget.
+
+= How can I integrate the random lyric in the theme? =
+
+Use the template tag hello_dolly_for_your_song() in your theme file.
 
 = Can I assign custom css? =
 Yes, you can. Each output of this plugin has individuell css classes. Please use your debugging tools, to find the classes.
 
 = How can I deinstall Hello Dolly For Your Song? =
 
-You can use the regular way at the plugin page. After deinstallation your wordpress is really clean.
+You can use the regular way on the plugin page. After deinstallation your wordpress is really clean.
 
 == Screenshots ==
 
@@ -66,7 +69,13 @@ You can use the regular way at the plugin page. After deinstallation your wordpr
 
 == Changelog ==
 
-= 0.6 =
+= 0.8 =
+* 1 september 2016
+* Template Tag
+* New Labels
+* Code Improvement
+
+= 0.7 =
 * 27 august 2016
 * Settings API
 * Update Process
@@ -85,16 +94,16 @@ You can use the regular way at the plugin page. After deinstallation your wordpr
 * Widget
 * Localization
 * German language
-* Clean deinstallation (database entries will be removed)
+* Clean deinstallation
 * Bugfix: Processing of apostrophes
 
 = 0.3 =
-* 3 may 2013
+* 5 may 2013
 * Structured and readable code
-* Initial published version
+* First published version
 
 = 0.2 =
-* 3 may 2013
+* 4 may 2013
 * Running version without errors
 
 = 0.1 =
@@ -102,6 +111,9 @@ You can use the regular way at the plugin page. After deinstallation your wordpr
 * Running version
 
 == Upgrade Notice ==
+
+= 0.8 =
+This version supports template tags for WordPress themes.
 
 = 0.7 =
 This version supports the WordPress Settings API.

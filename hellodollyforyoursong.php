@@ -3,8 +3,8 @@
 /*
 Plugin Name:  Hello Dolly For Your Song
 Plugin URI:   https://www.unmus.de/wordpress-plugin-hello-dolly-for-your-song/
-Description:  This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows a random line of any songtext in your blog. 
-Version:	  0.8
+Description:  This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows a random line of any text in your blog. 
+Version:	  0.9
 Author:       Marco Hitschler
 Author URI:   https://www.unmus.de/
 License:      GPL3
@@ -12,6 +12,15 @@ License URI:  https://www.gnu.org/licenses/gpl-3.0.html
 Domain Path:  /languages
 Text Domain:  hdfys
 */
+
+/* 
+Security
+*/
+
+if (!defined('ABSPATH')) 
+{  
+	exit;
+}
 
 /*
 Basic Setup
@@ -30,10 +39,10 @@ function hdfys_activate () {
 	/* Initialize Settings */
 	
 	add_option('hdfys_activated',"1");
-	add_option('hdfys_song');
-	add_option('hdfys_version', "8");
+	add_option('hdfys_song',"");
+	add_option('hdfys_version', "9");
 	add_option('widget_hdfys_widget');
-
+	add_option('hdfys_admin_lyric',"1");
 	}
 }
 register_activation_hook( __FILE__ , 'hdfys_activate' );
@@ -51,6 +60,7 @@ function hdfys_delete () {
 		delete_option('hdfys_song');
 		delete_option('hdfys_version');
 		delete_option('widget_hdfys_widget');
+		delete_option('hdfys_admin_lyric');
 
 	}
 	
@@ -73,6 +83,11 @@ function hdfys_update () {
     if($hdfys_previous_version==7) {
 	update_option('hdfys_version','8');
 	}
+	/* Update Process Version 0.9 */ 
+    if($hdfys_previous_version==8) {
+	update_option('hdfys_version','9');
+	add_option('hdfys_admin_lyric',"1");
+	}
 	
 } 
 add_action( 'plugins_loaded', 'hdfys_update' );
@@ -83,14 +98,10 @@ Content Functions
 
 function hdfys_get_lyric() {
 	
-	// First we fetch the lyric
 	$lyrics = get_option('hdfys_song');
-	
-	// Here we split it into lines
-	$lyrics = explode( "\n", $lyrics );
+	$lyrics = hdfys_random_line($lyrics); 
+	return $lyrics;
 
-	// And then randomly choose a line
-	return wptexturize( $lyrics[ mt_rand( 0, count( $lyrics ) - 1 ) ] );
 }
 
 function hdfys_get_hello_dolly() {
@@ -125,11 +136,18 @@ function hdfys_get_hello_dolly() {
 	Dolly'll never go away
 	Dolly'll never go away again";	
 	
-	// Here we split it into lines
-	$hdfys_hello_dolly = explode( "\n", $hdfys_hello_dolly );
+	$hdfys_hello_dolly = hdfys_random_line($hdfys_hello_dolly); 
+	return $hdfys_hello_dolly;
 
-	// And then randomly choose a line
-	return wptexturize( $hdfys_hello_dolly[ mt_rand( 0, count( $hdfys_hello_dolly ) - 1 ) ] );
+} 
+
+/*
+Random Line
+*/
+
+function hdfys_random_line ($text) {
+	$text = explode( "\n", $text );
+    return wptexturize( $text[ mt_rand( 0, count( $text ) - 1 ) ] );
 }
 
 /*
@@ -137,10 +155,13 @@ Display of the songtext @ admin head
 */
 
 function hdfys() {	
-	$text = get_option('hdfys_song');
-	$text = strlen($text);
-	$line = ($text > 0) ? hdfys_get_lyric() : hdfys_get_hello_dolly() ;
-	echo "<p class='admin-hdfys'>".$line."</p>";
+	$hdfys_admin_show = get_option('hdfys_admin_lyric');
+	if ($hdfys_admin_show==1) {
+		$text = get_option('hdfys_song');
+		$text = strlen($text);
+		$line = ($text > 0) ? hdfys_get_lyric() : hdfys_get_hello_dolly() ;
+		echo "<p class='admin-hdfys'>".$line."</p>";
+	}
 }
 add_action( 'admin_notices', 'hdfys' );
 

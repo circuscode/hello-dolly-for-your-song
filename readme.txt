@@ -7,7 +7,7 @@ Stable tag: 0.9
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows a random line of any text in your blog. 
+This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows a random line of any songtext in your blog. 
 
 == Description ==
 
@@ -34,6 +34,8 @@ This simple plugin is an extended version of the famous hello dolly plugin by Ma
 1. Upload plugin folder to the /wp-content/plugins/ directory
 2. Activate the plugin through the plugins menu in WordPress
 3. Go to Settings > Hello Dolly Your Song to configure your songtext
+
+See Other Notes for more details on configuration.
 
 == Frequently Asked Questions ==
 
@@ -135,3 +137,9 @@ This version supports the WordPress Settings API.
 
 1. Maintain the songtext you love in the Settings.
 2. That's was all!
+
+= Shortcode =
+[hdfys]
+
+= Template Tag =
+hello_dolly_for_your_song()

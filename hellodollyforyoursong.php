@@ -3,7 +3,7 @@
 /*
 Plugin Name:  Hello Dolly For Your Song
 Plugin URI:   https://www.unmus.de/wordpress-plugin-hello-dolly-for-your-song/
-Description:  This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows a random line of any text in your blog. 
+Description:  This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows a random line of any songtext in your blog. 
 Version:	  0.9
 Author:       Marco Hitschler
 Author URI:   https://www.unmus.de/

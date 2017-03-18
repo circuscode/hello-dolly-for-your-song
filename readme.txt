@@ -30,8 +30,6 @@ This simple plugin is an extended version of the famous hello dolly plugin by Ma
 * <a href="https://www.youtube.com/watch?v=ydp6k-RLiyk&t">ScreenCast showing almost all features</a> (German)
 * <a href="https://github.com/circuscode/hello-dolly-for-your-song">Source Code @ GitHub</a>
 
-https://github.com/circuscode/hello-dolly-for-your-song
-
 == Installation ==
 
 1. Upload plugin folder to /wp-content/plugins/ or download plugin via directory

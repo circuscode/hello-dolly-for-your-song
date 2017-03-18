@@ -2,12 +2,12 @@
 Contributors: unmus
 Tags: hello dolly, love, widget, music, random, text, shortcode, lyric, template tag, admin
 Requires at least: 4.0
-Tested up to: 4.7
-Stable tag: 0.9
+Tested up to: 4.7.3
+Stable tag: 0.10
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows a random line of any songtext in your blog. 
+This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows a random line of any text in your blog. 
 
 == Description ==
 
@@ -31,7 +31,7 @@ This simple plugin is an extended version of the famous hello dolly plugin by Ma
 
 == Installation ==
 
-1. Upload plugin folder to the /wp-content/plugins/ directory
+1. Upload plugin folder to /wp-content/plugins/ or download plugin via directory
 2. Activate the plugin through the plugins menu in WordPress
 3. Go to Settings > Hello Dolly Your Song to configure your songtext
 
@@ -67,12 +67,21 @@ Yes, you can. Each output of this plugin has individuell css classes. Please use
 
 You can use the regular way on the plugin page. After deinstallation your wordpress is really clean.
 
+= I have maintained a continous text and this breaks the admin layout partly? =
+
+Helly Dolly For Your Song works for texts in poem style. This means you need a text with word wraps after each line or sentence. If you want to use a continous text in the plugin, you should add word wraps after each sentence.
+
 == Screenshots ==
 
 1. Display songtext in the admin head
 2. Options Page
 
 == Changelog ==
+
+= 0.10 =
+* 18 march 2017
+* Options Link @ Plugin Page
+* Updated ReadMe
 
 = 0.9 =
 * 26 december 2016
@@ -124,6 +133,9 @@ You can use the regular way on the plugin page. After deinstallation your wordpr
 
 == Upgrade Notice ==
 
+= 0.10 =
+This version includes only minor changes.
+
 = 0.9 =
 This version supports french language, hidden options and brings more security.
 
@@ -136,7 +148,7 @@ This version supports the WordPress Settings API.
 == Configuration ==
 
 1. Maintain the songtext you love in the Settings.
-2. That's was all!
+2. That is all!
 
 = Shortcode =
 [hdfys]

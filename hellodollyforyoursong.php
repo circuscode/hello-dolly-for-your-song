@@ -3,8 +3,8 @@
 /*
 Plugin Name:  Hello Dolly For Your Song
 Plugin URI:   https://www.unmus.de/wordpress-plugin-hello-dolly-for-your-song/
-Description:  This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows a random line of any songtext in your blog. 
-Version:	  0.9
+Description:  This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows a random line of any text in your blog. 
+Version:	  0.10
 Author:       Marco Hitschler
 Author URI:   https://www.unmus.de/
 License:      GPL3
@@ -87,6 +87,10 @@ function hdfys_update () {
     if($hdfys_previous_version==8) {
 	update_option('hdfys_version','9');
 	add_option('hdfys_admin_lyric',"1");
+	}
+	/* Update Process Version 0.10 */ 
+    if($hdfys_previous_version==9) {
+	update_option('hdfys_version','10');
 	}
 	
 } 
@@ -291,6 +295,7 @@ Shortcode
 */
 
 // The Unbelievable Shortcode ;-)
+
 function hdfys_shortcode() {
 	$shortcode_text = get_option('hdfys_song');
 	$shortcode_length = strlen($shortcode_text);
@@ -304,6 +309,7 @@ Template Tag
 */
 
 // The Unbelievable Template Tag
+
 function hello_dolly_for_your_song() {
 	$hdfys_text = get_option('hdfys_song');
 	$hdfys_text_length = strlen($hdfys_text);
@@ -311,4 +317,15 @@ function hello_dolly_for_your_song() {
 	return '<div class="hdfys templatetag">'. $hdfys_template_tag_output .'</div>';
 }
 
+/*
+Links @ Plugin Page
+*/
+
+function hdfys_add_plugin_page_links ( $links ) {
+$hdfys_links = array('<a href="' . admin_url( 'options-general.php?page=hellodollyforyoursong' ) . '">'. __('Options','hellodollyforyoursong').'</a>',);
+return array_merge( $links, $hdfys_links );
+}
+
+add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'hdfys_add_plugin_page_links' );
+ 
 ?>

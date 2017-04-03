@@ -3,11 +3,11 @@ Contributors: unmus
 Tags: hello dolly, love, widget, music, random, text, shortcode, lyric, template tag, admin
 Requires at least: 4.0
 Tested up to: 4.7.3
-Stable tag: 0.10
+Stable tag: 0.11
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows a random line of any text in your blog. 
+This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows a random line of any text in your blog.
 
 == Description ==
 
@@ -21,7 +21,7 @@ This simple plugin is an extended version of the famous hello dolly plugin by Ma
 * Display a random line of a custom text in the blog administration
 * Options Page to define a custom song text
 * Hidden Options
-* Languages: English, German, Spanish, French
+* Languages: English, German, Spanish, French, Indonesian
 
 = Related Links =
 
@@ -54,23 +54,27 @@ You can define the title in the settings of the widget.
 
 = How can I integrate the random lyric in the theme? =
 
-Use the template tag hello_dolly_for_your_song() in your theme file.
+Use the template tag hello_dolly_for_your_song() in your theme file. The random line will directly printed embedded within a container.
 
 = I do only want to use the capabilities in the frontend and fade out the text in the admin panel. Is this possible? =
 
-You can use the hidden option for that! Please set the option "hdfys_admin_lyric" to 0 in the table wp_options within your WordPress database. Because of that the lyric in the admin panel will be faded out. Going back to standard settings, just set the value to 1. 
+You can use the hidden option for that! Please set the option "hdfys_admin_lyric" to 0 in the table wp_options within your WordPress database. Because of that the lyric in the admin panel will be faded out. Going back to standard settings, just set the value to 1.
 
 = Can I assign custom css? =
 
-Yes, you can. Each output of this plugin has individuell css classes. Please use your debugging tools, to find the classes.
+Yes, you can. Each output of this plugin has individual css classes. Please use your debugging tools, to find the classes.
 
 = How can I deinstall Hello Dolly For Your Song? =
 
 You can use the regular way on the plugin page. After deinstallation your wordpress is really clean.
 
-= I have maintained a continous text and this breaks the admin layout partly? =
+= I have maintained a continuous text and this breaks the admin layout partly? =
 
-Helly Dolly For Your Song works for texts in poem style. This means you need a text with word wraps after each line or sentence. If you want to use a continous text in the plugin, you should add word wraps after each sentence.
+Helly Dolly For Your Song works for texts in poem style. This means you need a text with word wraps after each line or sentence. If you want to use a continuous text in the plugin, you should add word wraps after each sentence.
+
+= Does the plugin provide an API? =
+
+You can access the random line with the function get_hello_dolly_for_your_song() in other plugin code or via functions.php. The function returns just one single random line without markup for further processing.
 
 == Screenshots ==
 
@@ -79,10 +83,15 @@ Helly Dolly For Your Song works for texts in poem style. This means you need a t
 
 == Changelog ==
 
+= 0.11 =
+* 04 april 2017
+* Template Tag does not require Echo command anymore
+* New Function available to get the raw random line for processing
+* New Language: Indonesian
+
 = 0.10 =
 * 18 march 2017
 * Options Link @ Plugin Page
-* Updated ReadMe
 
 = 0.9 =
 * 26 december 2016
@@ -134,6 +143,9 @@ Helly Dolly For Your Song works for texts in poem style. This means you need a t
 
 == Upgrade Notice ==
 
+= 0.11 =
+This version optimizes the template tag, brings a getter function and supports indonesian language.
+
 = 0.10 =
 This version includes only minor changes.
 
@@ -156,3 +168,6 @@ This version supports the WordPress Settings API.
 
 = Template Tag =
 hello_dolly_for_your_song()
+
+= Get just the string for processing =
+get_hello_dolly_for_your_song()

@@ -1,0 +1,53 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Hello Dolly For Your Song\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date:2017-03-31 \n"
+"Last-Translator: Jordan Silaen <jordan.silaen@chameleonjohn.com>\n"
+"Language-Team: ChameleonJohn.com <jordan.silaen@chameleonjohn.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"Language: ID\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-SearchPath-0: .\n"
+
+msgid "Which song do you like?"
+msgstr "lagu yang kamu suka?"
+
+msgid "What song touched you?"
+msgstr "Lagu apa menyentuh Anda?"
+
+msgid "What song brings you back fond memories?"
+msgstr "Lagu apa yang membawamu kembali kenangan indah?"
+
+msgid "Enter the lyrics into the form."
+msgstr "Masukkan lirik ke dalam formulir."
+
+msgid "Settings saved!"
+msgstr "Pengaturan disimpan!"
+
+msgid "Use the random lines in articles and pages:"
+msgstr "Gunakan garis acak dalam artikel dan halaman:"
+
+msgid "Show a custom line of your text"
+msgstr "Tampilkan garis kustom teks Anda"
+
+msgid "Options"
+msgstr "Pilihan"
+
+msgid "Songtext"
+msgstr "songtext"
+
+msgid "Post your lyrics."
+msgstr "Memposting lirik Anda."
+
+msgid "Text"
+msgstr "Teks"
+
+msgid "Just one thing"
+msgstr "Hanya satu hal"
+

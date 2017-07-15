@@ -1,9 +1,9 @@
 === Hello Dolly For Your Song ===
-Contributors: unmus
-Tags: hello dolly, love, widget, music, random, text, shortcode, lyric, template tag, admin
-Requires at least: 4.0
-Tested up to: 4.7.3
-Stable tag: 0.11
+Contributors: unmus, jordansilaen
+Tags: hello dolly, love, widget, music, random, text, shortcode, lyric, template tag, REST, admin
+Requires at least: 4.4
+Tested up to: 4.8
+Stable tag: 0.12
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,6 +19,7 @@ This simple plugin is an extended version of the famous hello dolly plugin by Ma
 * Display a random line of a custom text in your blog as shortcode
 * Display a random line of a custom text in your theme as template tag
 * Display a random line of a custom text in the blog administration
+* Integration into the WordPress REST API
 * Options Page to define a custom song text
 * Hidden Options
 * Languages: English, German, Spanish, French, Indonesian
@@ -76,12 +77,21 @@ Helly Dolly For Your Song works for texts in poem style. This means you need a t
 
 You can access the random line with the function get_hello_dolly_for_your_song() in other plugin code or via functions.php. The function returns just one single random line without markup for further processing.
 
+= Does the plugin supports the WordPress REST API?
+
+Yes! :-D You can access the endpoint with http://yourblogdomain/wp-json/restful-hello-dolly-for-your-song/text. The endpoint delivers one random line back.
+
 == Screenshots ==
 
 1. Display songtext in the admin head
 2. Options Page
 
 == Changelog ==
+
+= 0.12 =
+* 16 juli 2017
+* Integration into WordPress REST API
+* Source Code Comments to make wordpress plugin development concepts more transparent
 
 = 0.11 =
 * 04 april 2017
@@ -143,6 +153,9 @@ You can access the random line with the function get_hello_dolly_for_your_song()
 
 == Upgrade Notice ==
 
+= 0.12 =
+This version supports the WordPress REST API and can be used better to learn WordPress Plugin Development
+
 = 0.11 =
 This version optimizes the template tag, brings a getter function and supports indonesian language.
 
@@ -171,3 +184,6 @@ hello_dolly_for_your_song()
 
 = Get just the string for processing =
 get_hello_dolly_for_your_song()
+
+= REST API Endpoint =
+http://yourblogdomain/wp-json/restful-hello-dolly-for-your-song/text

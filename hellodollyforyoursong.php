@@ -4,19 +4,21 @@
 Plugin Name:  Hello Dolly For Your Song
 Plugin URI:   https://www.unmus.de/wordpress-plugin-hello-dolly-for-your-song/
 Description:  This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows a random line of any text in your blog.
-Version:	  0.11
+Version:	  0.12
 Author:       Marco Hitschler
 Author URI:   https://www.unmus.de/
 License:      GPL3
 License URI:  https://www.gnu.org/licenses/gpl-3.0.html
 Domain Path:  /languages
 Text Domain:  hello-dolly-for-your-song
+@package 	  Hello Dolly For Your Song
 */
 
 /*
 Security
 */
 
+// This avoids plugin code execution without WordPress is loaded.
 if (!defined('ABSPATH'))
 {
 	exit;
@@ -26,59 +28,65 @@ if (!defined('ABSPATH'))
 Basic Setup
 */
 
+/* This creates the url, where the plugin translations can be found */
 load_plugin_textdomain('hello-dolly-for-your-song', false, dirname( plugin_basename( __FILE__ ) ) . '/languages');
 
 /*
 Installation
 */
 
+/* This is the installation process */
 function hdfys_activate () {
 
+		/* Checks, if the plugin was only deactivated */
 		if (! get_option('hdfys_activated') ) {
 
 		/* Initialize Settings */
 
 		add_option('hdfys_activated',"1");
 		add_option('hdfys_song',"");
-		add_option('hdfys_version', "11");
+		add_option('hdfys_version', "12");
 		add_option('widget_hdfys_widget');
 		add_option('hdfys_admin_lyric',"1");
 		}
 }
 register_activation_hook( __FILE__ , 'hdfys_activate' );
 
+/* This is the plugin deactivation process */
 function hdfys_deactivate () {
-	// nothing to do
+		// nothing to do
 }
 register_deactivation_hook( __FILE__ , 'hdfys_deactivate' );
 
+/* This is the plugin deinstallation process */ 
 function hdfys_delete () {
 
+		/* Checks, if the plugin have been activated before */
 		if ( get_option('hdfys_activated') ) {
 
+		/* Remove all settings */
 		delete_option('hdfys_activated');
 		delete_option('hdfys_song');
 		delete_option('hdfys_version');
 		delete_option('widget_hdfys_widget');
 		delete_option('hdfys_admin_lyric');
-
 	}
-
 }
 register_uninstall_hook( __FILE__ , 'hdfys_delete' );
 
+/* This is the update process */
 function hdfys_update () {
 
     $hdfys_previous_version = get_option('hdfys_version');
 
-		/* Update Process Version 0.7 */
+	/* Update Process Version 0.7 */
   	if($hdfys_previous_version==false) {
-				add_option('hdfys_activated',"1");
-				add_option('hdfys_version', "7");
-				$lyrics = get_option('hdfys_song');
-				$lyrics = stripcslashes($lyrics);
-				update_option('hdfys_song',$lyrics);
-		}
+	add_option('hdfys_activated',"1");
+	add_option('hdfys_version', "7");
+	$lyrics = get_option('hdfys_song');
+	$lyrics = stripcslashes($lyrics);
+	update_option('hdfys_song',$lyrics);
+	}
 	/* Update Process Version 0.8 */
     if($hdfys_previous_version==7) {
 	update_option('hdfys_version','8');
@@ -96,6 +104,10 @@ function hdfys_update () {
     if($hdfys_previous_version==10) {
 	update_option('hdfys_version','11');
 	}
+	/* Update Process Version 0.12 */
+    if($hdfys_previous_version==11) {
+	update_option('hdfys_version','12');
+	}
 
 }
 add_action( 'plugins_loaded', 'hdfys_update' );
@@ -104,6 +116,7 @@ add_action( 'plugins_loaded', 'hdfys_update' );
 Content Functions
 */
 
+/* This returns a random line from the custom text */
 function hdfys_get_lyric() {
 
 	$lyrics = get_option('hdfys_song');
@@ -112,6 +125,7 @@ function hdfys_get_lyric() {
 
 }
 
+/* This returns a random line from the song Hello Dolly */
 function hdfys_get_hello_dolly() {
 
 	/* Hello Dolly Lyric */
@@ -153,6 +167,7 @@ function hdfys_get_hello_dolly() {
 Random Line
 */
 
+/* This catches a random line from a given text */
 function hdfys_random_line ($text) {
 	$text = explode( "\n", $text );
     return wptexturize( $text[ mt_rand( 0, count( $text ) - 1 ) ] );
@@ -162,6 +177,7 @@ function hdfys_random_line ($text) {
 Display of the songtext @ admin head
 */
 
+/* This prints the random line to the admin head in the wordpress backend */
 function hdfys() {
 	$hdfys_admin_show = get_option('hdfys_admin_lyric');
 	if ($hdfys_admin_show==1) {
@@ -173,6 +189,7 @@ function hdfys() {
 }
 add_action( 'admin_notices', 'hdfys' );
 
+/* This is adding required CSS styles in the wordpress backend */
 function hdfys_css() {
 	$x = is_rtl() ? 'left' : 'right';
 	echo "
@@ -193,6 +210,7 @@ add_action( 'admin_head', 'hdfys_css' );
 Options Page
 */
 
+/* This generates the option page of hello dolly for your song */
 function hdfys_options() {
 
 	echo '
@@ -208,14 +226,17 @@ function hdfys_options() {
 	echo '</form></div><div class="clear"></div>';
 }
 
+/* This defines the textfield on the options page */
 function hdfys_options_display_songtext() {
 	echo '<textarea style="width:600px;height:400px;" class="regular-text" type="text" name="hdfys_song" id="hdfys_song">'. get_option('hdfys_song') .'</textarea>';
 }
 
+/* This defines the label of the textfield on the options page */
 function hdfys_options_content_description() {
 	echo '<p>'. __('Post your lyrics.','hello-dolly-for-your-song').'</p>';
 }
 
+/* This generates the content on options page */
 function hdfys_options_display() {
 
 	add_settings_section("content_settings_section", __('Just one thing','hello-dolly-for-your-song') , "hdfys_options_content_description", "hdfys-options");
@@ -226,11 +247,13 @@ function hdfys_options_display() {
 }
 add_action("admin_init", "hdfys_options_display");
 
+/* This is the validation of the user input */
 function hdfys_validate_songtext ( $songtext ) {
-
+	// nothing to do
     return $songtext;
 }
 
+/* This integrates the plugin options page into the wordpress options menu */
 function hdfys_show_options() {
 	add_options_page('Hello Dolly For Your Song', 'Hello Dolly Your Song', 10, basename(__FILE__), "hdfys_options");
 }
@@ -240,10 +263,10 @@ add_action( 'admin_menu', 'hdfys_show_options');
 Widget
 */
 
-// The Unbelievable Widget ;-)
+/* The Unbelievable Widget ;-) */
 class hdfys_widget extends WP_Widget {
 
-	// Definition
+	// Widget Definition
 	public function __construct() {
 		parent::__construct(
 		'hdfys_widget',
@@ -252,7 +275,7 @@ class hdfys_widget extends WP_Widget {
 		);
 	}
 
-	// Output
+	// Widget Output
 	public function widget( $args, $instance ) {
 		$title = apply_filters( 'widget_title', $instance['title'] );
 		$widget_text = get_option('hdfys_song');
@@ -267,7 +290,7 @@ class hdfys_widget extends WP_Widget {
 		echo '</aside>';
 	}
 
-	// Form
+	// Widget Form
 	public function form( $instance ) {
 		if ( isset( $instance[ 'title' ] ) ) {
 			$title = $instance[ 'title' ];
@@ -280,7 +303,7 @@ class hdfys_widget extends WP_Widget {
 		<?php
 	}
 
-	// Update
+	// Widget Update
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
@@ -289,8 +312,9 @@ class hdfys_widget extends WP_Widget {
 
 }
 
+/* This activates the widget in wordpress */
 function register_hdfys_widget() {
-    register_widget( 'Hdfys_widget' );
+    register_widget( 'hdfys_widget' );
 }
 add_action( 'widgets_init', 'register_hdfys_widget' );
 
@@ -298,8 +322,7 @@ add_action( 'widgets_init', 'register_hdfys_widget' );
 Shortcode
 */
 
-// The Unbelievable Shortcode ;-)
-
+/* The Unbelievable Shortcode ;-) */
 function hdfys_shortcode() {
 	$shortcode_text = get_option('hdfys_song');
 	$shortcode_length = strlen($shortcode_text);
@@ -312,8 +335,7 @@ add_shortcode('hdfys','hdfys_shortcode');
 Template Tag
 */
 
-// The Unbelievable Template Tag
-
+/* The Unbelievable Template Tag */
 function hello_dolly_for_your_song() {
 	$hdfys_text = get_option('hdfys_song');
 	$hdfys_text_length = strlen($hdfys_text);
@@ -321,8 +343,11 @@ function hello_dolly_for_your_song() {
 	echo '<div class="hdfys templatetag">'. $hdfys_template_tag_output .'</div>';
 }
 
-// Get String Hello Dolly For Your Song
+/*
+API ;-)
+*/
 
+/* This returns the random line and can be used in any Theme/Plugin code */
 function get_hello_dolly_for_your_song() {
 	$hdfys_text = get_option('hdfys_song');
 	$hdfys_text_length = strlen($hdfys_text);
@@ -334,11 +359,73 @@ function get_hello_dolly_for_your_song() {
 Links @ Plugin Page
 */
 
+// This adds the settings link on the plugin page
 function hdfys_add_plugin_page_links ( $links ) {
 $hdfys_links = array('<a href="' . admin_url( 'options-general.php?page=hellodollyforyoursong' ) . '">'. __('Options','hello-dolly-for-your-song').'</a>',);
 return array_merge( $links, $hdfys_links );
 }
-
 add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'hdfys_add_plugin_page_links' );
+
+/*
+Integration into WordPress REST API
+*/
+
+/*
+Following code was written from Jake Spurlock
+Taken from the restful hello dolly plugin
+Author URI: http://jakespurlock.com
+Plugin URI: https://wordpress.org/plugins/restful-hello-dolly/
+*/
+
+/* RESTful Hello Dolly For Your Song Class. */
+class RESTful_Hello_Dolly_For_Your_Song {
+
+/* The one instance of RESTful Hello Dolly Routes. */
+private static $instance;
+
+/* Instantiate or return the one RESTful Hello Dolly Routes instance. */
+public static function instance() {
+
+	if ( is_null( self::$instance ) ) {
+		self::$instance = new self();
+	}
+
+	return self::$instance;
+}
+
+/* Construct the object. */
+public function __construct() {
+		add_action( 'rest_api_init', array( $this, 'register_routes' ) );
+}
+
+/* Register the API routes */
+public function register_routes() {
+
+	// Return a random Hello Dolly For Your Song line
+	register_rest_route( 'restful-hello-dolly-for-your-song', '/text', array(
+		'methods' => WP_REST_Server::READABLE,
+		'callback' => array( $this, 'rest_get_hello_dolly_for_your_song' ),
+	) );
+}
+
+/* Use the search endpoint to get a list of recent articles that were published */
+public function rest_get_hello_dolly_for_your_song( $request ) {
+
+	$hdfys_text = get_option('hdfys_song');
+	$hdfys_text_length = strlen($hdfys_text);
+	$hdfys_rest_output = ($hdfys_text_length > 0) ? hdfys_get_lyric() : hdfys_get_hello_dolly() ;
+
+	return $hdfys_rest_output;
+}
+
+}
+
+/* Wrapper function to return the one RESTful Hello Dolly Output instance. */
+function RESTful_Hello_Dolly_For_Your_Song() {
+	return RESTful_Hello_Dolly_For_Your_Song::instance();
+}
+
+/* Kick off the class. */
+add_action( 'init', 'RESTful_Hello_Dolly_For_Your_Song' );
 
 ?>

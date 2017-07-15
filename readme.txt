@@ -19,7 +19,7 @@ This simple plugin is an extended version of the famous hello dolly plugin by Ma
 * Display a random line of a custom text in your blog as shortcode
 * Display a random line of a custom text in your theme as template tag
 * Display a random line of a custom text in the blog administration
-* Integration into the WordPress REST API
+* Integration into WordPress REST API
 * Options Page to define a custom song text
 * Hidden Options
 * Languages: English, German, Spanish, French, Indonesian
@@ -89,7 +89,7 @@ Yes! :-D You can access the endpoint with http://yourblogdomain/wp-json/restful-
 == Changelog ==
 
 = 0.12 =
-* 16 juli 2017
+* 16 july 2017
 * Integration into WordPress REST API
 * Source Code Comments to make wordpress plugin development concepts more transparent
 

@@ -2,8 +2,9 @@
 Contributors: unmus, jordansilaen
 Tags: hello dolly, love, widget, music, random, text, shortcode, lyric, template tag, REST, admin
 Requires at least: 4.4
-Tested up to: 4.8
-Stable tag: 0.12
+Requires PHP: 7.0
+Tested up to: 4.9.1
+Stable tag: 0.13
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -17,17 +18,19 @@ This simple plugin is an extended version of the famous hello dolly plugin by Ma
 
 * Display a random line of a custom text in your blog as widget
 * Display a random line of a custom text in your blog as shortcode
+* Display a random line of a custom text in your blog as gutenberg block
 * Display a random line of a custom text in your theme as template tag
 * Display a random line of a custom text in the blog administration
 * Integration into WordPress REST API
+* Hooks for Developers
 * Options Page to define a custom song text
 * Hidden Options
 * Languages: English, German, Spanish, French, Indonesian
 
 = Related Links =
 
-* <a href="http://www.unmus.de/wordpress-plugin-hello-dolly-for-your-song/">Official Plugin Page</a> (German)
-* <a href="http://www.unmus.de/hello-dolly-for-your-song/">Why I have created this plugin?</a> (German)
+* <a href="http://www.unmus.de/hello-dolly-for-your-song/">Official Plugin Page</a> (German)
+* <a href="http://www.unmus.de/hello-dolly/">Why I have created this plugin?</a> (German)
 * <a href="https://www.youtube.com/watch?v=ydp6k-RLiyk&t">ScreenCast showing almost all features</a> (German)
 * <a href="https://github.com/circuscode/hello-dolly-for-your-song">Source Code @ GitHub</a>
 
@@ -77,9 +80,13 @@ Helly Dolly For Your Song works for texts in poem style. This means you need a t
 
 You can access the random line with the function get_hello_dolly_for_your_song() in other plugin code or via functions.php. The function returns just one single random line without markup for further processing.
 
-= Does the plugin supports the WordPress REST API?
+= Does the plugin supports the WordPress REST API? =
 
 Yes! :-D You can access the endpoint with http://yourblogdomain/wp-json/restful-hello-dolly-for-your-song/text. The endpoint delivers one random line back.
+
+= Is is possible to manipulate the HTML-output before rendering? =
+
+The HTML-oupt of the gutenberg block, template tag or shortcode can be manipulated. This will be made with the Filter hdfys_output_filter. Below you find a code example.
 
 == Screenshots ==
 
@@ -87,6 +94,14 @@ Yes! :-D You can access the endpoint with http://yourblogdomain/wp-json/restful-
 2. Options Page
 
 == Changelog ==
+
+= 0.13 =
+* xx january 2018
+* Gutenberg Support
+* Automatic Removal of Empty Lines
+* Plugin Actions
+* Plugin Filters
+* Code Improvement
 
 = 0.12 =
 * 16 july 2017
@@ -153,6 +168,9 @@ Yes! :-D You can access the endpoint with http://yourblogdomain/wp-json/restful-
 
 == Upgrade Notice ==
 
+= 0.13 =
+This version brings Gutenberg Support and some Hooks for WordPress Developers
+
 = 0.12 =
 This version supports the WordPress REST API and can be used better to learn WordPress Plugin Development
 
@@ -187,3 +205,29 @@ get_hello_dolly_for_your_song()
 
 = REST API Endpoint =
 http://yourblogdomain/wp-json/restful-hello-dolly-for-your-song/text
+
+= Actions =
+hdfys_new_song 
+This Action wil be fired, if a new text was maintained in the settings.
+You can use the following code.
+
+`function hdfys_do_anything() {`
+``
+`	// Add your code to execute here`
+``
+`}`
+`add_action( 'hdfys_new_song', 'hdfys_do_anything', 10, 3 );`
+
+= Filter = 
+hdfys_output_filter 
+The filter will be applied before output of the gutenberg block, template tag and shortcode.
+You can use the following code.
+
+`function hdfys_output_manipulate( $output ) {`
+``
+`	// Add your filter code here`
+`	// Example: $output=strtolower( $output );`
+``
+`	return $output;`
+`}`
+`add_filter( 'hdfys_output_filter', 'hdfys_output_manipulate', 10, 1 );`

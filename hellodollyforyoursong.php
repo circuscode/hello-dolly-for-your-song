@@ -3,8 +3,8 @@
 /*
 Plugin Name:  Hello Dolly For Your Song
 Plugin URI:   https://www.unmus.de/wordpress-plugin-hello-dolly-for-your-song/
-Description:  This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. It shows a random line of any text in your blog.
-Version:	  0.13
+Description:  This simple plugin shows a random line of any text in your blog.
+Version:	  0.14
 Author:       Marco Hitschler
 Author URI:   https://www.unmus.de/
 License:      GPL3
@@ -44,7 +44,7 @@ function hdfys_activate () {
 		/* Initialize Settings */
 		add_option('hdfys_activated',"1");
 		add_option('hdfys_song',"");
-		add_option('hdfys_version', "12");
+		add_option('hdfys_version', "14");
 		add_option('widget_hdfys_widget');
 		add_option('hdfys_admin_lyric',"1");
 		add_option('hdfys_text_updated',"0");
@@ -112,6 +112,11 @@ function hdfys_update () {
 	/* Update Process Version 0.13 */
 	if($hdfys_previous_version==12) {
 	update_option('hdfys_version','13');
+	add_option('hdfys_text_updated',"0");
+	}
+	/* Update Process Version 0.14 */
+	if($hdfys_previous_version==13) {
+	update_option('hdfys_version','14');
 	add_option('hdfys_text_updated',"0");
 	}
 
@@ -198,12 +203,24 @@ Display of the songtext @ admin head
 /* This prints the random line to the admin head in the wordpress backend */
 function hdfys() {
 	$hdfys_admin_show = get_option('hdfys_admin_lyric');
-	if ($hdfys_admin_show==1) {
+	if ($hdfys_admin_show==1 AND (hdfys_where_am_i()) ) {
 		$line=hdfys_get_anything();
 		echo "<p class='admin-hdfys'>".$line."</p>";
 	}
 }
 add_action( 'admin_notices', 'hdfys' );
+
+/* This checks the page and decide to print the line or not */
+function hdfys_where_am_i() {
+
+	global $pagenow;
+    if ( $pagenow == 'index.php' OR $pagenow == 'edit.php' OR $pagenow == 'upload.php' OR $pagenow == 'edit-comments.php' OR $pagenow == 'post.php') {
+		return true;
+	} else {
+		return false;
+	}
+
+}
 
 /* This is adding required CSS styles in the wordpress backend */
 function hdfys_css() {

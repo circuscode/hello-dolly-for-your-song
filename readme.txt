@@ -1,6 +1,6 @@
 === Hello Dolly For Your Song ===
 Contributors: unmus, jordansilaen
-Tags: hello dolly, love, widget, music, random, text, shortcode, lyric, template tag, REST, admin
+Tags: hello world, love, widget, music, random, text, shortcode, lyric, template tag, REST, admin, gutenberg
 Requires at least: 4.4
 Requires PHP: 7.0
 Tested up to: 4.9.1
@@ -96,7 +96,7 @@ The HTML-oupt of the gutenberg block, template tag or shortcode can be manipulat
 == Changelog ==
 
 = 0.13 =
-* xx january 2018
+* 13 january 2018
 * Gutenberg Support
 * Automatic Removal of Empty Lines
 * Plugin Actions
@@ -207,9 +207,7 @@ get_hello_dolly_for_your_song()
 http://yourblogdomain/wp-json/restful-hello-dolly-for-your-song/text
 
 = Actions =
-hdfys_new_song 
-This Action wil be fired, if a new text was maintained in the settings.
-You can use the following code.
+hdfys_new_song: This Action wil be fired, if a new text was maintained in the settings. You can use the following code.
 
 `function hdfys_do_anything() {`
 ``
@@ -219,9 +217,7 @@ You can use the following code.
 `add_action( 'hdfys_new_song', 'hdfys_do_anything', 10, 3 );`
 
 = Filter = 
-hdfys_output_filter 
-The filter will be applied before output of the gutenberg block, template tag and shortcode.
-You can use the following code.
+hdfys_output_filter: The filter will be applied before output of the gutenberg block, template tag and shortcode. You can use the following code.
 
 `function hdfys_output_manipulate( $output ) {`
 ``

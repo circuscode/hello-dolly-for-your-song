@@ -29,9 +29,9 @@ This simple plugin is an extended version of the famous hello dolly plugin by Ma
 
 = Related Links =
 
-* <a href="http://www.unmus.de/hello-dolly-for-your-song/">Official Plugin Page</a> (German)
-* <a href="http://www.unmus.de/hello-dolly/">Why I have created this plugin?</a> (German)
-* <a href="https://www.youtube.com/watch?v=ydp6k-RLiyk&t">ScreenCast showing almost all features</a> (German)
+* <a href="https://www.unmus.de/hello-dolly-for-your-song/">Official Plugin Page</a> (German)
+* <a href="https://www.unmus.de/hello-dolly/">Why I have created this plugin?</a> (German)
+* <a href="https://www.unmus.de/hello-dolly-for-your-song/#screencast">ScreenCast showing almost all features</a> (German)
 * <a href="https://github.com/circuscode/hello-dolly-for-your-song">Source Code @ GitHub</a>
 
 == Installation ==

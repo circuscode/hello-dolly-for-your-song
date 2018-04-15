@@ -44,15 +44,13 @@ http://yourblogdomain/wp-json/restful-hello-dolly-for-your-song/text
 
 ## Actions 
 
-### hdfys_new_song 
+** hdfys_new_song **
 This Action wil be fired, if a new text was maintained in the settings.
-You can use the following code.
 
 ## Filter
 
-### hdfys_output_filter 
+** hdfys_output_filter **
 The filter will be applied before output of the gutenberg block, template tag and shortcode.
-You can use the following code.
 
 ## Frequently Asked Questions
 
@@ -114,9 +112,9 @@ This project is licensed under the GPL3 License.
 
 ## Related Links
 
-* <a href="http://www.unmus.de/hello-dolly-for-your-song/">Official Plugin Page</a> (German)
-* <a href="http://www.unmus.de/hello-dolly/">Why I have created this plugin?</a> (German)
-* <a href="https://www.youtube.com/watch?v=ydp6k-RLiyk&t">ScreenCast showing almost all features</a> (German)
+* <a href="https://www.unmus.de/hello-dolly-for-your-song/">Official Plugin Page</a> (German)
+* <a href="https://www.unmus.de/hello-dolly/">Why I have created this plugin?</a> (German)
+* <a href="https://www.unmus.de/hello-dolly-for-your-song/#screencast">ScreenCast showing almost all features</a> (German)
 * <a href="https://github.com/circuscode/hello-dolly-for-your-song">Source Code @ GitHub</a>
 
 ## Changelog

@@ -4,13 +4,13 @@ This simple plugin shows a random line of any text in your blog.
 
 ## Description
 
-This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg (inventor of wordpress). Every human being has a special relationship to a particular song. And because of that, Hello Dolly For Your Song brings the lyric of your favourite song in the blog. But of course it can be used for any text. ;-)
+This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. Every human being has a special relationship to a particular song. And because of that, Hello Dolly For Your Song brings the lyric of your favourite song in the blog. But of course it can be used for any text. ;-)
 
 ## Features
 
+* Display a random line of a custom text in your blog as gutenberg block
 * Display a random line of a custom text in your blog as widget
 * Display a random line of a custom text in your blog as shortcode
-* Display a random line of a custom text in your blog as gutenberg block
 * Display a random line of a custom text in your theme as template tag
 * Display a random line of a custom text in the blog administration
 * Integration into WordPress REST API
@@ -29,6 +29,9 @@ This simple plugin is an extended version of the famous hello dolly plugin by Ma
 
 1. Maintain the songtext you love in the Settings.
 2. That is all!
+
+## Gutenberg Block Category
+Widgets
 
 ## Shortcode
 [hdfys]
@@ -57,6 +60,10 @@ The filter will be applied before output of the gutenberg block, template tag an
 ### I have not maintained a songtext, nevertheless some lyrics is displayed in the admin head.
 
 This is Hello Dolly by Louis Armstrong. If no text is maintained in the options, the programm uses the songtext of Hello Dolly.
+
+### How can I use the gutenberg block?
+
+Just add the block in your content. You find the block in the category "widgets".
 
 ### How can I use the shortcode?
 
@@ -92,7 +99,7 @@ You can access the random line with the function get_hello_dolly_for_your_song()
 
 ### Does the plugin supports the WordPress REST API?
 
-Yes! :-D You can access the endpoint with http://yourblogdomain/wp-json/restful-hello-dolly-for-your-song/text. The endpoint delivers one random line back.
+Yes! :-D You can access the endpoint with http://yourblogdomain/wp-json/restful-hello-dolly-for-your-song/text. The endpoint delivers one random line back. So it's not really REST, it's only "READ".
 
 ### Is is possible to manipulate the HTML-output before rendering?
 
@@ -119,6 +126,12 @@ This project is licensed under the GPL3 License.
 
 ## Changelog
 
+### 0.15
+* january 2019
+* Gutenberg Support
+* Update Process Bugfix
+* New Activation Criteria
+
 ### 0.14
 
 * april 2018
@@ -127,7 +140,7 @@ This project is licensed under the GPL3 License.
 ### 0.13
 
 * 13 january 2018
-* Gutenberg Support
+* Gutenberg Plugin Support
 * Automatic Removal of Empty Lines
 * Plugin Actions
 * Plugin Filters

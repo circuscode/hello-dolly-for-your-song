@@ -3,8 +3,8 @@ Contributors: unmus, jordansilaen
 Tags: hello world, love, random, lyric, admin
 Requires at least: 4.4
 Requires PHP: 7.0
-Tested up to: 4.9.5
-Stable tag: 0.14
+Tested up to: 5.0.2
+Stable tag: 0.15
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,13 +12,13 @@ This simple plugin shows a random line of any text in your blog.
 
 == Description ==
 
-This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg (inventor of wordpress). Every human being has a special relationship to a particular song. And because of that, Hello Dolly For Your Song brings the lyric of your favourite song in the blog. But of course it can be used for any text. ;-)
+This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. Every human being has a special relationship to a particular song. And because of that, Hello Dolly For Your Song brings the lyric of your favourite song in the blog. But of course it can be used for any text. ;-)
 
 = Features =
 
+* Display a random line of a custom text in your blog as gutenberg block
 * Display a random line of a custom text in your blog as widget
 * Display a random line of a custom text in your blog as shortcode
-* Display a random line of a custom text in your blog as gutenberg block
 * Display a random line of a custom text in your theme as template tag
 * Display a random line of a custom text in the blog administration
 * Integration into WordPress REST API
@@ -40,13 +40,15 @@ This simple plugin is an extended version of the famous hello dolly plugin by Ma
 2. Activate the plugin in WordPress
 3. Go to Settings > Hello Dolly Your Song to configure your songtext
 
-See Other Notes for more details on configuration.
-
 == Frequently Asked Questions ==
 
 = I have not maintained a songtext, nevertheless some lyrics is displayed in the admin head. =
 
 This is Hello Dolly by Louis Armstrong. If no text is maintained in the options, the programm uses the songtext of Hello Dolly.
+
+= How can I use the gutenberg block? =
+
+Just add the block in your content. You find the block in the category "widgets".
 
 = How can I use the shortcode? =
 
@@ -82,7 +84,7 @@ You can access the random line with the function get_hello_dolly_for_your_song()
 
 = Does the plugin supports the WordPress REST API? =
 
-Yes! :-D You can access the endpoint with http://yourblogdomain/wp-json/restful-hello-dolly-for-your-song/text. The endpoint delivers one random line back.
+Yes! :-D You can access the endpoint with http://yourblogdomain/wp-json/restful-hello-dolly-for-your-song/text. The endpoint delivers one random line back. So it's not really REST, it's only "READ".
 
 = Is is possible to manipulate the HTML-output before rendering? =
 
@@ -94,10 +96,15 @@ Several admin pages like settings are excluded, because some plugins do not use 
 
 == Screenshots ==
 
-1. Display songtext in the admin head
-2. Options Page
+1. Options Page
 
 == Changelog ==
+
+= 0.15 =
+* january 2019
+* Gutenberg Support
+* Update Process Bugfix
+* New Activation Criteria
 
 = 0.14 =
 * april 2018
@@ -105,7 +112,7 @@ Several admin pages like settings are excluded, because some plugins do not use 
 
 = 0.13 =
 * 13 january 2018
-* Gutenberg Support
+* Gutenberg Plugin Support
 * Automatic Removal of Empty Lines
 * Plugin Actions
 * Plugin Filters
@@ -176,11 +183,14 @@ Several admin pages like settings are excluded, because some plugins do not use 
 
 == Upgrade Notice ==
 
-= 0.13 =
+= 0.15 =
+This version brings Gutenberg Support.
+
+= 0.14 =
 This version brings more stability on the user interface
 
 = 0.13 =
-This version brings Gutenberg Support and some Hooks for WordPress Developers
+This version brings Gutenberg Plugin Support and some Hooks for WordPress Developers
 
 = 0.12 =
 This version supports the WordPress REST API and can be used better to learn WordPress Plugin Development
@@ -204,6 +214,9 @@ This version supports the WordPress Settings API.
 
 1. Maintain the songtext you love in the Settings.
 2. That is all!
+
+= Gutenberg Block Category =
+Widgets
 
 = Shortcode =
 [hdfys]

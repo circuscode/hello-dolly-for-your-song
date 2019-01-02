@@ -28,7 +28,7 @@
 
 		title: __( 'Hello Dolly Your Song', 'hdfys' ),
 		icon: 'format-audio', 
-		category: 'common',
+		category: 'widgets',
 
 		edit: 
 		function( props ) {

@@ -4,14 +4,13 @@
 Plugin Name:  Hello Dolly For Your Song
 Plugin URI:   https://www.unmus.de/wordpress-plugin-hello-dolly-for-your-song/
 Description:  This simple plugin shows a random line of any text in your blog.
-Version:	  0.14
+Version:	  0.15
 Author:       Marco Hitschler
 Author URI:   https://www.unmus.de/
 License:      GPL3
 License URI:  https://www.gnu.org/licenses/gpl-3.0.html
 Domain Path:  /languages
 Text Domain:  hello-dolly-for-your-song
-@package 	  Hello Dolly For Your Song
 */
 
 /*
@@ -44,7 +43,7 @@ function hdfys_activate () {
 		/* Initialize Settings */
 		add_option('hdfys_activated',"1");
 		add_option('hdfys_song',"");
-		add_option('hdfys_version', "14");
+		add_option('hdfys_version', "15");
 		add_option('widget_hdfys_widget');
 		add_option('hdfys_admin_lyric',"1");
 		add_option('hdfys_text_updated',"0");
@@ -117,7 +116,10 @@ function hdfys_update () {
 	/* Update Process Version 0.14 */
 	if($hdfys_previous_version==13) {
 	update_option('hdfys_version','14');
-	add_option('hdfys_text_updated',"0");
+	}
+	/* Update Process Version 0.15 */
+	if($hdfys_previous_version==14) {
+	update_option('hdfys_version','15');
 	}
 
 }
@@ -215,7 +217,20 @@ function hdfys_where_am_i() {
 
 	global $pagenow;
     if ( $pagenow == 'index.php' OR $pagenow == 'edit.php' OR $pagenow == 'upload.php' OR $pagenow == 'edit-comments.php' OR $pagenow == 'post.php') {
-		return true;
+		
+		if (isset($_GET['post_type'])) {
+			$postscope=$_GET["post_type"];
+		}
+		else {
+			$postscope='';
+		}
+		
+		if ( $pagenow == 'edit.php' AND (!($postscope == '' OR $postscope == 'page')) ) {
+			return false;
+		} else {
+			return true;
+		}
+
 	} else {
 		return false;
 	}
@@ -466,8 +481,10 @@ add_action( 'init', 'RESTful_Hello_Dolly_For_Your_Song' );
 Gutenberg
 */
 
-/* Run only if Gutenberg is installed */
-if (function_exists ( 'the_gutenberg_project' )) {
+/* Run only if WordPress 5.0 or above */
+
+global $wp_version;
+if ( version_compare( $wp_version, '5', '>=' ) ) {
 
 /* Prepare Block Content */
 function hdfys_gutenberg_block() {
@@ -506,10 +523,10 @@ add_action( 'enqueue_block_editor_assets', 'hdfys_block_editor_assets' );
 
 /* Fallback Rendering @ FrontEnd */
 register_block_type( 'hdfys/hdfys', array(
-    'render_callback' => 'hdfys_gutenberg_block',
+	'render_callback' => 'hdfys_gutenberg_block'
 ) );
 
-} // If Gutenberg exists
+} // If WordPress 5.0 or
 
 /*
 Actions & Filters

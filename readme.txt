@@ -224,7 +224,7 @@ Widgets
 = Template Tag =
 hello_dolly_for_your_song()
 
-= Get just the string for processing =
+= Get Function =
 get_hello_dolly_for_your_song()
 
 = REST API Endpoint =

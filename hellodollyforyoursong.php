@@ -592,6 +592,23 @@ function hdfys_check_hello_dolly() {
 	}
 }
 
+// This adds debug info to Site Health
+function hdfys_add_debug_info( $debug_info ) {
+    $debug_info['hdfys'] = array(
+        'label'    => __( 'Hello Dolly For Your Song', 'hdfys' ),
+        'fields'   => array(
+            'license' => array(
+                'label'    => __( 'Text', 'hdfys' ),
+                'value'   => get_option( 'hdfys_song' ),
+                'private' => true,
+            ),
+        ),
+    );
+ 
+    return $debug_info;
+}
+add_filter( 'debug_information', 'hdfys_add_debug_info' );
+
 /*
 Actions & Filters
 */

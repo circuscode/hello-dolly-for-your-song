@@ -12,7 +12,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
 "Language: de\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-SearchPath-0: .\n"
 
 msgid "Which song do you like?"
@@ -50,3 +50,24 @@ msgstr "Text"
 
 msgid "Just one thing"
 msgstr "Nur eine Sache"
+
+msgid "Hello Dolly For Your Song"
+msgstr "Hello Dolly For Your Song"
+
+msgid "Plugin Hello Dolly is not active."
+msgstr "Plugin Hello Dolly ist nicht aktiv."
+
+msgid "Performance"
+msgstr "Performance"
+
+msgid "It does not make sense, running the plugins Hello Dolly For Your Song and Hello Dolly in parallel."
+msgstr "Es macht keinen Sinn, die Plugins Hello Dolly For Your Song und Hello Dolly parallel auszuführen."
+
+msgid "Plugin Hello Dolly is active."
+msgstr "Plugin Hello Dolly ist aktiv."
+
+msgid "The Plugin Hello Dolly is active. Hello Dolly For Your Song and Hello Dolly should not run in parallel. One of them should be deactivated."
+msgstr "Das Plugin Hello Dolly ist aktiv. Hello Dolly For Your Song und Hello Dolly sollten nicht gleichzeitig ausgeführt werden. Eins von beiden sollte deaktiviert werden."
+
+msgid "Plugin Administration"
+msgstr "Plugin Administration"

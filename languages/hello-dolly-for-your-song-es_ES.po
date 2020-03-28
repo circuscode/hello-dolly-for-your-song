@@ -12,7 +12,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
 "Language: es_ES\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-SearchPath-0: .\n"
 
 msgid "Which song do you like?"
@@ -34,7 +34,7 @@ msgid "Use the random lines in articles and pages:"
 msgstr "Use las líneas aleatorias en artículos y páginas:"
 
 msgid "Show a custom line of your text"
-msgstr "Mostrar una línea personalizada de su texto."
+msgstr "Mostrar una línea personalizada de su texto"
 
 msgid "Options"
 msgstr "Configuración"
@@ -50,3 +50,24 @@ msgstr "Texto"
 
 msgid "Just one thing"
 msgstr "Sólo una cosa"
+
+msgid "Hello Dolly For Your Song"
+msgstr "Hello Dolly For Your Song"
+
+msgid "Plugin Hello Dolly is not active."
+msgstr "El plugin Hello Dolly no está activo."
+
+msgid "Performance"
+msgstr "Actuación"
+
+msgid "It does not make sense, running the plugins Hello Dolly For Your Song and Hello Dolly in parallel."
+msgstr "No tiene sentido, ejecutar los plugins Hello Dolly For Your Song y Hello Dolly en paralelo."
+
+msgid "Plugin Hello Dolly is active."
+msgstr "El plugin Hello Dolly está activo."
+
+msgid "The Plugin Hello Dolly is active. Hello Dolly For Your Song and Hello Dolly should not run in parallel. One of them should be deactivated."
+msgstr "El Plugin Hello Dolly está activo. Hello Dolly For Your Song y Hello Dolly no deben funcionar en paralelo. Uno de ellos debe ser desactivado."
+
+msgid "Plugin Administration"
+msgstr "Administración de Plugins"

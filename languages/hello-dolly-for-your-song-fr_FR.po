@@ -51,3 +51,24 @@ msgstr "Texte"
 
 msgid "Just one thing"
 msgstr "Juste une chose"
+
+msgid "Hello Dolly For Your Song"
+msgstr "Hello Dolly For Your Song"
+
+msgid "Plugin Hello Dolly is not active."
+msgstr "Le plugin Hello Dolly n'est pas actif."
+
+msgid "Performance"
+msgstr "Actuación"
+
+msgid "It does not make sense, running the plugins Hello Dolly For Your Song and Hello Dolly in parallel."
+msgstr "Cela n'a pas de sens, de faire tourner les plugins Hello Dolly For Your Song et Hello Dolly en parallèle."
+
+msgid "Plugin Hello Dolly is active."
+msgstr "Le plugin Hello Dolly est actif."
+
+msgid "The Plugin Hello Dolly is active. Hello Dolly For Your Song and Hello Dolly should not run in parallel. One of them should be deactivated."
+msgstr "Le Plugin Hello Dolly est actif. Hello Dolly For Your Song et Hello Dolly ne doivent pas fonctionner en parallèle. L'un d'eux doit être désactivé."
+
+msgid "Plugin Administration"
+msgstr "Administration des plugins"

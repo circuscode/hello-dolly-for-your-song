@@ -4,13 +4,13 @@
 Plugin Name:  Hello Dolly For Your Song
 Plugin URI:   https://www.unmus.de/wordpress-plugin-hello-dolly-for-your-song/
 Description:  This simple plugin shows a random line of any text in your blog.
-Version:	  0.15
+Version:	  0.16
 Author:       Marco Hitschler
 Author URI:   https://www.unmus.de/
 License:      GPL3
 License URI:  https://www.gnu.org/licenses/gpl-3.0.html
-Domain Path:  /languages
 Text Domain:  hello-dolly-for-your-song
+Domain Path:  /languages
 */
 
 /*
@@ -28,7 +28,10 @@ Basic Setup
 */
 
 /* This creates the url, where the plugin translations can be found */
-load_plugin_textdomain('hello-dolly-for-your-song', false, dirname( plugin_basename( __FILE__ ) ) . '/languages');
+function hdfys_load_textdomain() {
+	load_plugin_textdomain('hello-dolly-for-your-song', false, dirname( plugin_basename( __FILE__ ) ) . '/languages');
+}
+add_action( 'init', 'hdfys_load_textdomain' );
 
 /*
 Installation
@@ -43,7 +46,7 @@ function hdfys_activate () {
 		/* Initialize Settings */
 		add_option('hdfys_activated',"1");
 		add_option('hdfys_song',"");
-		add_option('hdfys_version', "15");
+		add_option('hdfys_version', "16");
 		add_option('widget_hdfys_widget');
 		add_option('hdfys_admin_lyric',"1");
 		add_option('hdfys_text_updated',"0");
@@ -120,6 +123,10 @@ function hdfys_update () {
 	/* Update Process Version 0.15 */
 	if($hdfys_previous_version==14) {
 	update_option('hdfys_version','15');
+	}
+	/* Update Process Version 0.16 */
+	if($hdfys_previous_version==15) {
+	update_option('hdfys_version','16');
 	}
 
 }
@@ -527,6 +534,63 @@ register_block_type( 'hdfys/hdfys', array(
 ) );
 
 } // If WordPress 5.0 or
+
+/*
+Site Health
+*/
+
+// This adds an additional test to site health
+function hdfys_add_hello_dolly_test( $tests ) {
+    $tests['direct']['hdfys_plugin'] = array(
+        'label' => __( 'Hello Dolly For Your Song' ),
+        'test'  => 'hdfys_hello_dolly_test',
+    );
+    return $tests;
+}
+add_filter( 'site_status_tests', 'hdfys_add_hello_dolly_test' );
+
+// This prints the test results in site health
+function hdfys_hello_dolly_test() {
+    $result = array(
+        'label'       => __( 'Plugin Hello Dolly is not active.' ),
+        'status'      => 'good',
+        'badge'       => array(
+            'label' => __( 'Performance' ),
+            'color' => 'green',
+        ),
+        'description' => sprintf(
+            '<p>%s</p>',
+            __( 'It does not make sense, running the plugins Hello Dolly For Your Song and Hello Dolly in parallel.' )
+        ),
+        'actions'     => '',
+        'test'        => 'hdfys_plugin',
+    );
+ 
+    if ( hdfys_check_hello_dolly() ) {
+        $result['status'] = 'recommended';
+        $result['label'] = __( 'Plugin Hello Dolly is active.' );
+        $result['description'] = sprintf(
+            '<p>%s</p>',
+            __( 'The Plugin Hello Dolly is active. Hello Dolly For Your Song and Hello Dolly should not run in parallel. One of them should be deactivated.' )
+        );
+        $result['actions'] .= sprintf(
+            '<p><a href="%s">%s</a></p>',
+            esc_url( admin_url( 'plugins.php' ) ),
+            __( 'Plugin Administration' )
+        );
+    }
+ 
+    return $result;
+}
+
+// This is the test
+function hdfys_check_hello_dolly() {
+	if ( is_plugin_active('hello-dolly/hello.php') ) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
 /*
 Actions & Filters

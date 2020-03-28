@@ -3,8 +3,8 @@ Contributors: unmus, jordansilaen
 Tags: hello world, love, random, lyric, admin
 Requires at least: 4.4
 Requires PHP: 7.0
-Tested up to: 5.0.2
-Stable tag: 0.15
+Tested up to: 5.3.2
+Stable tag: 0.16
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -99,6 +99,11 @@ Several admin pages like settings are excluded, because some plugins do not use 
 1. Options Page
 
 == Changelog ==
+
+= 0.16 =
+* march 2020
+* Site Health Integration
+* Code Improvement
 
 = 0.15 =
 * january 2019

@@ -49,4 +49,5 @@
 		},
 
 	} ); // Register Block Type
+	
 })(); // function

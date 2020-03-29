@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hello Dolly For Your Song\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: \n"
+"PO-Revision-Date: 2020-03-29 17:18+0200\n"
 "Last-Translator: Marco Hitschler <marco.hitschler@unmus.de>\n"
 "Language-Team: Marco Hitschler <marco.hitschler@unmus.de>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgid "Which song do you like?"
 msgstr "Welches Lied magst du?"
 
 msgid "What song touched you?"
-msgstr "Welches Lied berührt dich?"
+msgstr "Welches Lied hat dich berührt?"
 
 msgid "What song brings you back fond memories?"
 msgstr "Welches Lied bringt dir schöne Erinnerungen zurück?"
@@ -29,9 +29,6 @@ msgstr "Schreib den Liedtext in das Formular."
 
 msgid "Settings saved!"
 msgstr "Einstellungen gespeichert!"
-
-msgid "Use the random lines in articles and pages:"
-msgstr "Nutze die zufällige Zeile in Artikel und Seiten:"
 
 msgid "Show a custom line of your text"
 msgstr "Zeige eine zufällige Zeile deines Texts"

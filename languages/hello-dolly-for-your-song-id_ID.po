@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Hello Dolly For Your Song\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-03-29 00:26+0100\n"
+"PO-Revision-Date: 2020-03-29 17:18+0200\n"
 "Last-Translator: Marco Hitschler <marco.hitschler@unmus.de>\n"
 "Language-Team: ChameleonJohn.com <jordan.silaen@chameleonjohn.com>\n"
 "MIME-Version: 1.0\n"
@@ -29,9 +29,6 @@ msgstr "Masukkan lirik ke dalam formulir."
 
 msgid "Settings saved!"
 msgstr "Pengaturan disimpan!"
-
-msgid "Use the random lines in articles and pages:"
-msgstr "Gunakan garis acak dalam artikel dan halaman:"
 
 msgid "Show a custom line of your text"
 msgstr "Tampilkan garis kustom teks Anda"

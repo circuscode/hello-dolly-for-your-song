@@ -24,6 +24,7 @@ This simple plugin is an extended version of the famous hello dolly plugin by Ma
 * Integration into WordPress REST API
 * Hooks for Developers
 * Options Page to define a custom song text
+* Site Health Integration
 * Hidden Options
 * Languages: English, German, Spanish, French, Indonesian
 
@@ -187,6 +188,9 @@ Several admin pages like settings are excluded, because some plugins do not use 
 * Running version
 
 == Upgrade Notice ==
+
+= 0.16 =
+This version brings Site Health Integration.
 
 = 0.15 =
 This version brings Gutenberg Support.

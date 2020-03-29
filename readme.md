@@ -1,6 +1,6 @@
 # Hello Dolly For Your Song
 
-This simple plugin shows a random line of any text in your blog.
+This simple Wordpress plugin shows a random line of any text in your blog.
 
 ## Description
 
@@ -16,6 +16,7 @@ This simple plugin is an extended version of the famous hello dolly plugin by Ma
 * Integration into WordPress REST API
 * Hooks for Developers
 * Options Page to define a custom song text
+* Site Health Integration
 * Hidden Options
 * Languages: English, German, Spanish, French, Indonesian
 
@@ -112,6 +113,8 @@ Several admin pages like settings are excluded, because some plugins do not use 
 ## Built With
 
 * [Visual Studio Code](https://code.visualstudio.com)
+* [poedit](https://poedit.net)
+* [Postman](https://www.postman.com)
 
 ## License
 
@@ -126,7 +129,14 @@ This project is licensed under the GPL3 License.
 
 ## Changelog
 
+### 0.16
+
+* march 2020
+* Site Health Integration
+* Code Improvements
+
 ### 0.15
+
 * january 2019
 * Gutenberg Support
 * Update Process Bugfix

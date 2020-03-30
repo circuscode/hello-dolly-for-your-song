@@ -101,6 +101,10 @@ Several admin pages like settings are excluded, because some plugins do not use 
 
 == Changelog ==
 
+= 0.17 =
+* april 2020
+* Code Improvement
+
 = 0.16 =
 * march 2020
 * Site Health Integration
@@ -188,6 +192,9 @@ Several admin pages like settings are excluded, because some plugins do not use 
 * Running version
 
 == Upgrade Notice ==
+
+= 0.16 =
+This version brings better learning opportunities.
 
 = 0.16 =
 This version brings Site Health Integration.

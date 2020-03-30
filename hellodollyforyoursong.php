@@ -41,5 +41,6 @@ require_once('hdfys_templatetag.php');
 require_once('hdfys_rest.php');
 require_once('hdfys_gutenberg.php');
 require_once('hdfys_sitehealth.php');
+require_once('hdfys_api.php');
 
 ?>

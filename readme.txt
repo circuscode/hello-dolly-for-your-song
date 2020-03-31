@@ -101,7 +101,7 @@ Several admin pages like settings are excluded, because some plugins do not use 
 
 == Changelog ==
 
-= 0.17 =
+= 0.17 (in development) =
 * april 2020
 * Code Improvement
 

@@ -127,14 +127,7 @@ This project is licensed under the GPL3 License.
 * <a href="https://www.unmus.de/hello-dolly-for-your-song/#screencast">ScreenCast showing almost all features</a> (German)
 * <a href="https://github.com/circuscode/hello-dolly-for-your-song">Source Code @ GitHub</a>
 
-## Changelog
-
-| First Header  | Second Header | Second Header |
-| ------------- | ------------- | ------------- |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-
-### 0.17
+### 0.17 (in development)
 
 * april 2020
 * Code Improvements

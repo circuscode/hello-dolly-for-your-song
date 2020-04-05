@@ -12,5 +12,5 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@3.0.0
       with:
         ftp-server: ftp://unmus.de/unmus/dev/wp-content/plugins/hello-dolly-for-your-song/
-        ftp-username: f0129e50
+        ftp-username: ${{ secrets.FTP_USER_GUTHUBDEPLOY }}
         ftp-password: ${{ secrets.FTP_PASSWORD_GITHUBDEPLOY }}

@@ -10,8 +10,6 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 This simple plugin shows a random line of any text in your blog.
 
-# Test GitHub Action
-
 == Description ==
 
 This simple plugin is an extended version of the famous hello dolly plugin by Matt Mullenweg. Every human being has a special relationship to a particular song. And because of that, Hello Dolly For Your Song brings the lyric of your favourite song in the blog. But of course it can be used for any text. ;-)

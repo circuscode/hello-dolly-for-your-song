@@ -1,5 +1,5 @@
 on: push
-name: Publish Website
+name: Publish On Dev
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
@@ -11,6 +11,6 @@ jobs:
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.0.0
       with:
-        ftp-server: ftp://ftp.samkirkland.com/
-        ftp-username: myFtpUserName
+        ftp-server: ftps://unmus.de/unmus/dev/wp-content/plugins/hello-dolly-for-your-song/
+        ftp-username: GitHubDeploy
         ftp-password: ${{ secrets.FTP_PASSWORD }}

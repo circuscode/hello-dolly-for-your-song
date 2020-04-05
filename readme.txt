@@ -10,7 +10,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 This simple plugin shows a random line of any text in your blog.
 
-#Oh No
+#Oh No Again
 
 == Description ==
 

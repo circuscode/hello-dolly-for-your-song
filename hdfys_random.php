@@ -1,36 +1,48 @@
 <?php
 
-/*
-All things related to the random line
-*/
+/**
+ * Random Core Functions
+ * 
+ * @package Hello Dolly For Your Song
+ * @since 0.17
+ */
 
-/*
-Security
-*/
-
-/* This avoids code execution without WordPress is loaded. */
-if (!defined('ABSPATH'))
-{
+// Avoids code execution without WordPress is loaded (Security Measure)
+if ( !defined('ABSPATH') ) {
 	exit;
 }
 
-/*
-Random Functions
-*/
+/**
+ * Returns a random line from custom text
+ *
+ * @since 0.1
+ * 
+ * @return string Random Line
+ */
 
-/* This returns a random line from the custom text */
 function hdfys_get_lyric() {
 
+	// Get custom text
 	$lyrics = get_option('hdfys_song');
+
+	// Get a random line
 	$lyrics = hdfys_random_line($lyrics);
+
 	return $lyrics;
 
 }
 
-/* This returns a random line from the song Hello Dolly */
+/**
+ * Returns a random line from Hello Dolly
+ *
+ * @since 0.1
+ * 
+ * @return string Random Line
+ */
+
 function hdfys_get_hello_dolly() {
 
-	/* Hello Dolly Lyric */
+	// Hello Dolly Lyric
 	$hdfys_hello_dolly="Hello, Dolly
 	Well, hello, Dolly
 	It's so nice to have you back where you belong
@@ -60,22 +72,45 @@ function hdfys_get_hello_dolly() {
 	Dolly'll never go away
 	Dolly'll never go away again";
 
+	// Get random line
 	$hdfys_hello_dolly = hdfys_random_line($hdfys_hello_dolly);
+
 	return $hdfys_hello_dolly;
 
 }
 
-/* This catches a random line from a given text */
+/**
+ * Catches a random line from a given text
+ *
+ * @since 0.1
+ * 
+ * @return string Random Line
+ */
+
 function hdfys_random_line ($text) {
 	$text = explode( "\n", $text );
     return wptexturize( $text[ mt_rand( 0, count( $text ) - 1 ) ] );
 }
 
-/* This delivers a random line from custom text or hello dolly fallback */
+/**
+ * Deliver a random line from custom text or Hello Dolly
+ *
+ * @since 0.1
+ * 
+ * @return string Random Line
+ */
+
 function hdfys_get_anything () {
+
+	// Get Custom Text
 	$text = get_option('hdfys_song');
+
+	// If Length=0 then no text is maintained
 	$text = strlen($text);
+
+	// Decide which text to take
 	$line = ($text > 0) ? hdfys_get_lyric() : hdfys_get_hello_dolly() ;
+	
 	return $line;
 }
 

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Hello Dolly For Your Song\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Marco Hitschler <marco.hitschler@unmus.de>\n"
+"Last-Translator: Petra Boppré <lillywitch13@gmail.com>\n"
 "Language-Team: Marco Hitschler <marco.hitschler@unmus.de>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,55 +16,55 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 msgid "Which song do you like?"
-msgstr ""
+msgstr "Какая песня тебе нравится?"
 
 msgid "What song touched you?"
-msgstr ""
+msgstr "Какая песня коснулась тебя?"
 
 msgid "What song brings you back fond memories?"
-msgstr ""
+msgstr "Какая песня возвращает вам прекрасные воспоминания?"
 
 msgid "Enter the lyrics into the form."
-msgstr ""
+msgstr "Напишите текст песни в форме."
 
 msgid "Settings saved!"
-msgstr ""
+msgstr "Настройки сохранены!"
 
 msgid "Show a custom line of your text"
-msgstr ""
+msgstr "Показать случайную строку вашего текста"
 
 msgid "Options"
-msgstr ""
+msgstr "Настройка"
 
 msgid "Songtext"
-msgstr ""
+msgstr "текст песни"
 
 msgid "Post your lyrics."
-msgstr ""
+msgstr "Оставьте текст песни."
 
 msgid "Text"
-msgstr ""
+msgstr "текст"
 
 msgid "Just one thing"
-msgstr ""
+msgstr "Только одно"
 
 msgid "Hello Dolly For Your Song"
 msgstr "Hello Dolly For Your Song"
 
 msgid "Plugin Hello Dolly is not active."
-msgstr ""
+msgstr "Плагин Hello Dolly не активен."
 
 msgid "Performance"
-msgstr "Performance"
+msgstr "Производи́тельность"
 
 msgid "It does not make sense, running the plugins Hello Dolly For Your Song and Hello Dolly in parallel."
-msgstr ""
+msgstr "Нет смысла запускать плагины Hello Dolly For Your Song и Hello Dolly параллельно."
 
 msgid "Plugin Hello Dolly is active."
-msgstr ""
+msgstr "Плагин Hello Dolly активен."
 
 msgid "The Plugin Hello Dolly is active. Hello Dolly For Your Song and Hello Dolly should not run in parallel. One of them should be deactivated."
-msgstr ""
+msgstr "Плагин Hello Dolly активен. Hello Dolly For Your Song и Hello Dolly не должны запускаться одновременно. Один из двух должен быть деактивирован."
 
 msgid "Plugin Administration"
-msgstr ""
+msgstr "Администрирование плагинов"

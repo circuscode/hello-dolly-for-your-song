@@ -1,5 +1,10 @@
-/*
- * Hello Dolly For Your Song Gutenberg Block
+/**
+ * Gutenberg Block
+ *
+ * @link https://developer.wordpress.org/block-editor/developers/
+ * 
+ * @package Hello Dolly For Your Song
+ * @since 0.13
  */
 
 ( function() {

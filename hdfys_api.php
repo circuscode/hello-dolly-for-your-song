@@ -12,8 +12,7 @@
  */
 
 // Avoids code execution without WordPress is loaded (Security Measure)
-if (!defined('ABSPATH'))
-{
+if ( !defined('ABSPATH') ) {
 	exit;
 }
 
@@ -28,14 +27,21 @@ if (!defined('ABSPATH'))
  */
 
 function get_hello_dolly_for_your_song() {
-	$hdfys_string = hdfys_get_anything();
-	return $hdfys_string;
+	$hdfys_random = hdfys_get_anything();
+	return $hdfys_random;
 }
 
 /**
  * Does anything when new text will be saved in the plugin settings
  *
- * Code Example Action Usage
+ * Code Example Action Usage:
+ * 
+ *		function hdfys_do_anything() {
+ * 
+ * 			// Add your code to execute here
+ * 
+ * 		} 
+ *		add_action( 'hdfys_new_song', 'hdfys_do_anything', 10, 3 );
  * 
  * @link https://developer.wordpress.org/plugins/hooks/actions/
  *
@@ -43,17 +49,20 @@ function get_hello_dolly_for_your_song() {
  * @see hdfys_new_song
  */
 
-// function hdfys_do_anything() {
-
-	// Add your code to execute here
-
-// } 
-// add_action( 'hdfys_new_song', 'hdfys_do_anything', 10, 3 );
-
 /**
  * Filters the output before it will rendered on the user interface
  *
- * Code Example Filter Usage
+ * Code Example Filter Usage:
+ * 
+ * 		function hdfys_output_manipulate( $output ) {
+ * 
+ * 			// Add your filter code here
+ *			// Example: $output=strtolower( $output );
+ *
+ *		return $output;
+ *
+ * 		}
+ * 		add_filter( 'hdfys_output_filter', 'hdfys_output_manipulate', 10, 1 );
  * 
  * @link https://developer.wordpress.org/plugins/hooks/filters/
  * 
@@ -62,14 +71,5 @@ function get_hello_dolly_for_your_song() {
  * 
  * @return string Manipulated Output
  */
-
-// function hdfys_output_manipulate( $output ) {
-
-	// Add your filter code here
-	// Example: $output=strtolower( $output );
-
-	// return $output;
-// }
-// add_filter( 'hdfys_output_filter', 'hdfys_output_manipulate', 10, 1 );
 
 ?>

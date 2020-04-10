@@ -101,6 +101,10 @@ Several admin pages like settings are excluded, because some plugins do not use 
 
 == Changelog ==
 
+= 0.17 (this, in development, not released) =
+* april 2020
+* Better readable code
+
 = 0.16 =
 * march 2020
 * Site Health Integration

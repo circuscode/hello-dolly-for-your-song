@@ -105,6 +105,7 @@ Several admin pages like settings are excluded, because some plugins do not use 
 * april 2020
 * Russian Translation
 * Better readable code
+* Bugfix: Broken Plugin Administration Link
 
 = 0.16 =
 * march 2020

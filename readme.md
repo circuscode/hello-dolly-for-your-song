@@ -134,6 +134,7 @@ This project is licensed under the GPL3 License.
 * april 2020
 * Russian Translation
 * Better readable code
+* Bugfix: Broken Plugin Administration Link
 
 ### 0.16
 

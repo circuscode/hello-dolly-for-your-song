@@ -2,33 +2,29 @@
 
 /**
  * API
+ * 
+ * Interface, Hooks, Actions, Filters, Code Templates
  *
+ * @link https://developer.wordpress.org/plugins/hooks/
+ * 
  * @package Hello Dolly For Your Song
  * @since 0.17
  */
 
-/*
-Security
-*/
-
-/* Avoids code execution without WordPress is loaded. */
+// Avoids code execution without WordPress is loaded (Security Measure)
 if (!defined('ABSPATH'))
 {
 	exit;
 }
 
-/*
-API ;-)
-*/
-
 /**
  * Returns the random line
  *
- * This function can be used to get the random line in external code. 
+ * This api function can be used to get the random line in external code. 
  *
  * @since 0.11
  *
- * @return string Random Line.
+ * @return string Random Line
  */
 
 function get_hello_dolly_for_your_song() {
@@ -36,23 +32,15 @@ function get_hello_dolly_for_your_song() {
 	return $hdfys_string;
 }
 
-/*
-Hooks: Actions & Filters
-https://developer.wordpress.org/plugins/hooks/
-*/
-
-/*
-Action
-https://developer.wordpress.org/plugins/hooks/actions/
-*/
-
 /**
  * Does anything when new text will be saved in the plugin settings
  *
- * Action hdfys_new_song
- * Code Example
+ * Code Example Action Usage
+ * 
+ * @link https://developer.wordpress.org/plugins/hooks/actions/
  *
  * @since 0.13
+ * @see hdfys_new_song
  */
 
 // function hdfys_do_anything() {
@@ -62,20 +50,17 @@ https://developer.wordpress.org/plugins/hooks/actions/
 // } 
 // add_action( 'hdfys_new_song', 'hdfys_do_anything', 10, 3 );
 
-/*
-Filter
-https://developer.wordpress.org/plugins/hooks/filters/
-*/
-
 /**
  * Filters the output before it will rendered on the user interface
  *
- * Filter hdfys_output_filter
- * Code Example
+ * Code Example Filter Usage
+ * 
+ * @link https://developer.wordpress.org/plugins/hooks/filters/
  * 
  * @since 0.13
+ * @see hdfys_output_filter
  * 
- * @return string Manipulated Output.
+ * @return string Manipulated Output
  */
 
 // function hdfys_output_manipulate( $output ) {

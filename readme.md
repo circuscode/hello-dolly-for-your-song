@@ -132,6 +132,7 @@ This project is licensed under the GPL3 License.
 ### 0.17 (this, in development, not released)
 
 * april 2020
+* Russian Translation
 * Better readable code
 
 ### 0.16

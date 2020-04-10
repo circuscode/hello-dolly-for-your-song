@@ -129,6 +129,11 @@ This project is licensed under the GPL3 License.
 
 ## Changelog
 
+### 0.17 (this, in development, not released)
+
+* april 2020
+* Better readable code
+
 ### 0.16
 
 * march 2020

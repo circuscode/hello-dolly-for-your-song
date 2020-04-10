@@ -193,6 +193,9 @@ Several admin pages like settings are excluded, because some plugins do not use 
 
 == Upgrade Notice ==
 
+= 0.17 =
+This version brings XXX.
+
 = 0.16 =
 This version brings Site Health Integration.
 

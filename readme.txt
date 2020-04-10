@@ -103,6 +103,7 @@ Several admin pages like settings are excluded, because some plugins do not use 
 
 = 0.17 (this, in development, not released) =
 * april 2020
+* Russian Translation
 * Better readable code
 
 = 0.16 =
@@ -194,7 +195,7 @@ Several admin pages like settings are excluded, because some plugins do not use 
 == Upgrade Notice ==
 
 = 0.17 =
-This version brings XXX.
+This version brings russian translation.
 
 = 0.16 =
 This version brings Site Health Integration.

@@ -49,15 +49,15 @@ function hdfys_options_display_songtext() {
 
 /* This defines the label of the textfield on the options page */
 function hdfys_options_content_description() {
-	echo '<p>'. __('Post your lyrics.','hello-dolly-for-your-song').'</p>';
+	echo '<p>'. __('Insert a text.','hello-dolly-for-your-song').'</p>';
 }
 
 /* This generates the content on options page */
 function hdfys_options_display() {
 
-	add_settings_section("content_settings_section", __('Just one thing','hello-dolly-for-your-song') , "hdfys_options_content_description", "hdfys-options");
+	add_settings_section("content_settings_section", __('Basic Settings','hello-dolly-for-your-song') , "hdfys_options_content_description", "hdfys-options");
 
-	add_settings_field("hdfys_song", __('Text','hello-dolly-for-your-song') , "hdfys_options_display_songtext", "hdfys-options", "content_settings_section");
+	add_settings_field("hdfys_song", __('Custom Text','hello-dolly-for-your-song') , "hdfys_options_display_songtext", "hdfys-options", "content_settings_section");
 
 	register_setting("hdfys_settings", "hdfys_song", "hdfys_validate_songtext");
 }

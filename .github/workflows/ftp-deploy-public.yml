@@ -1,8 +1,8 @@
 on:
   push:
     branches:
-      - deployment/dev
-name: Deploy@Dev
+      - deployment/public
+name: Deploy@Public
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action

@@ -1,24 +1,23 @@
 <?php
 
-/*
-All things related to Installation & Deinstallation
-*/
+/**
+ * Plugin Installation Process
+ * 
+ * @package Hello Dolly For Your Song
+ * @since 0.17
+ */
 
-/*
-Security
-*/
-
-/* This avoids code execution without WordPress is loaded. */
-if (!defined('ABSPATH'))
-{
+// Avoids code execution without WordPress is loaded (Security Measure)
+if ( !defined('ABSPATH') ) {
 	exit;
 }
 
-/*
-Installation
-*/
+/**
+ * Initialize the plugin
+ *
+ * @since 0.7
+ */
 
-/* This is the installation process */
 function hdfys_activate () {
 
 	/* Checks, if the plugin was only deactivated */
@@ -35,21 +34,23 @@ function hdfys_activate () {
 }
 register_activation_hook( __FILE__ , 'hdfys_activate' );
 
-/*
-Deactivation
-*/
+/**
+ * Deactivate the plugin
+ *
+ * @since 0.7
+ */
 
-/* This is the plugin deactivation process */
 function hdfys_deactivate () {
 	// nothing to do
 }
 register_deactivation_hook( __FILE__ , 'hdfys_deactivate' );
 
-/*
-Deinstallation
-*/
+/**
+ * Deinstall the plugin
+ *
+ * @since 0.7
+ */
 
-/* This is the plugin deinstallation process */ 
 function hdfys_delete () {
 
 	/* Checks, if the plugin have been activated before */

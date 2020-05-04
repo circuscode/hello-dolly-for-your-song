@@ -1,49 +1,75 @@
 <?php
 
-/*
-All things related to the shortcode
-*/
+/**
+ * API
+ * 
+ * Interface, Hooks, Actions, Filters, Code Templates
+ *
+ * @link https://developer.wordpress.org/plugins/hooks/
+ * 
+ * @package Hello Dolly For Your Song
+ * @since 0.17
+ */
 
-/*
-Security
-*/
-
-/* This avoids code execution without WordPress is loaded. */
-if (!defined('ABSPATH'))
-{
+// Avoids code execution without WordPress is loaded (Security Measure)
+if ( !defined('ABSPATH') ) {
 	exit;
 }
 
-/*
-API ;-)
-*/
+/**
+ * Returns the random line
+ *
+ * This api function can be used to get the random line in external code. 
+ *
+ * @since 0.11
+ *
+ * @return string Random Line
+ */
 
-/* This returns the random line and can be used in any Theme/Plugin code */
 function get_hello_dolly_for_your_song() {
-	$hdfys_string = hdfys_get_anything();
-	return $hdfys_string;
+	$hdfys_random = hdfys_get_anything();
+	return $hdfys_random;
 }
 
-/*
-Actions & Filters
-*/
+/**
+ * Does anything when new text will be saved in the plugin settings
+ *
+ * Code Example Action Usage:
+ * 
+ *		function hdfys_do_anything() {
+ * 
+ * 			// Add your code to execute here
+ * 
+ * 		} 
+ *		add_action( 'hdfys_new_song', 'hdfys_do_anything', 10, 3 );
+ * 
+ * @link https://developer.wordpress.org/plugins/hooks/actions/
+ *
+ * @since 0.13
+ * @see hdfys_new_song
+ */
 
-// Code Example: How to use the action?
-// function hdfys_do_anything() {
-
-	// Add your code to execute here
-
-// } 
-// add_action( 'hdfys_new_song', 'hdfys_do_anything', 10, 3 );
-
-// Code Example: How to use the filter?
-// function hdfys_output_manipulate( $output ) {
-
-	// Add your filter code here
-	// Example: $output=strtolower( $output );
-
-	// return $output;
-// }
-// add_filter( 'hdfys_output_filter', 'hdfys_output_manipulate', 10, 1 );
+/**
+ * Filters the output before it will rendered on the user interface
+ *
+ * Code Example Filter Usage:
+ * 
+ * 		function hdfys_output_manipulate( $output ) {
+ * 
+ * 			// Add your filter code here
+ *			// Example: $output=strtolower( $output );
+ *
+ *		return $output;
+ *
+ * 		}
+ * 		add_filter( 'hdfys_output_filter', 'hdfys_output_manipulate', 10, 1 );
+ * 
+ * @link https://developer.wordpress.org/plugins/hooks/filters/
+ * 
+ * @since 0.13
+ * @see hdfys_output_filter
+ * 
+ * @return string Manipulated Output
+ */
 
 ?>

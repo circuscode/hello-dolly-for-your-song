@@ -1,35 +1,59 @@
 <?php
 
-/*
-All things related to User Interface
-*/
+/**
+ * User Interface
+ * 
+ * @package Hello Dolly For Your Song
+ * @since 0.17
+ */
 
-/*
-Security
-*/
 
-/* This avoids code execution without WordPress is loaded. */
-if (!defined('ABSPATH'))
-{
+// Avoids code execution without WordPress is loaded (Security Measure)
+if ( !defined('ABSPATH') ) {
 	exit;
 }
 
-/* This prints the random line to the admin head in the wordpress backend */
+/**
+ * Prints the random line to the admin head in WordPress
+ *
+ * @since 0.3
+ * @since 0.9 Hidden Setting
+ */
+
 function hdfys() {
+
+	// Read setting
 	$hdfys_admin_show = get_option('hdfys_admin_lyric');
-	if ($hdfys_admin_show==1 AND (hdfys_where_am_i()) ) {
+
+	// Should I print or not?
+	if ( $hdfys_admin_show==1 AND ( hdfys_where_am_i() ) ) {
+
+		// Get text
 		$line=hdfys_get_anything();
+
+		// Output
 		echo "<p class='admin-hdfys'>".$line."</p>";
 	}
 }
 add_action( 'admin_notices', 'hdfys' );
 
-/* This checks the page and decide to print the line or not */
+/**
+ * Checks the page and decides to print the line or not
+ *
+ * @since 0.14
+ * 
+ * @return boolean true=yes false=no
+ */
+
 function hdfys_where_am_i() {
 
+	// Get current page
 	global $pagenow;
+
+	// Run on specific pages only
     if ( $pagenow == 'index.php' OR $pagenow == 'edit.php' OR $pagenow == 'upload.php' OR $pagenow == 'edit-comments.php' OR $pagenow == 'post.php') {
 		
+		// Get Post Type
 		if (isset($_GET['post_type'])) {
 			$postscope=$_GET["post_type"];
 		}
@@ -37,6 +61,7 @@ function hdfys_where_am_i() {
 			$postscope='';
 		}
 		
+		// Sorry, I do not remember, what is the idea here
 		if ( $pagenow == 'edit.php' AND (!($postscope == '' OR $postscope == 'page')) ) {
 			return false;
 		} else {
@@ -49,7 +74,12 @@ function hdfys_where_am_i() {
 
 }
 
-/* This is adding required CSS styles in the wordpress backend */
+/**
+ * Adds the required CSS styling in the WordPress Backend
+ *
+ * @since 0.1
+ */
+
 function hdfys_css() {
 	$x = is_rtl() ? 'left' : 'right';
 	echo "

@@ -1,24 +1,26 @@
 <?php
 
-/*
-All things related to the widget
-*/
+/**
+ * Widget
+ * 
+ * @link https://developer.wordpress.org/themes/functionality/widgets/
+ * 
+ * @package Hello Dolly For Your Song
+ * @since 0.17
+ */
 
-/*
-Security
-*/
-
-/* This avoids code execution without WordPress is loaded. */
+// Avoids code execution without WordPress is loaded (Security Measure)
 if (!defined('ABSPATH'))
 {
 	exit;
 }
 
-/*
-Widget
-*/
+/**
+ * Create the unbelievable widget ;-)
+ *
+ * @since 0.4
+ */
 
-/* The Unbelievable Widget ;-) */
 class hdfys_widget extends WP_Widget {
 
 	// Widget Definition
@@ -65,7 +67,12 @@ class hdfys_widget extends WP_Widget {
 
 }
 
-/* This activates the widget in wordpress */
+/**
+ * Activate the widget.
+ *
+ * @since 0.4
+ */
+
 function register_hdfys_widget() {
     register_widget( 'hdfys_widget' );
 }

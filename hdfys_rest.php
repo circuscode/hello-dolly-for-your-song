@@ -1,37 +1,39 @@
 <?php
 
-/*
-All things related to the REST API
-*/
+/**
+ * REST API
+ * 
+ * @link https://developer.wordpress.org/rest-api/
+ * 
+ * @package Hello Dolly For Your Song
+ * @since 0.17
+ */
 
-/*
-Security
-*/
-
-/* This avoids code execution without WordPress is loaded. */
+// Avoids code execution without WordPress is loaded (Security Measure)
 if (!defined('ABSPATH'))
 {
 	exit;
 }
 
-/*
-Integration into WordPress REST API
-*/
+/**
+ * Defines REST Hello Dolly for your Song Object.
+ *
+ * Code was written from Jake Spurlock
+ * Taken from the restful hello dolly plugin
+ *
+ * @since 0.12
+ * 
+ * @link https://developer.wordpress.org/rest-api/
+ * @link http://jakespurlock.com
+ * @link https://wordpress.org/plugins/restful-hello-dolly/
+ */
 
-/*
-Following code was written from Jake Spurlock
-Taken from the restful hello dolly plugin
-Author URI: http://jakespurlock.com
-Plugin URI: https://wordpress.org/plugins/restful-hello-dolly/
-*/
-
-/* RESTful Hello Dolly For Your Song Class. */
 class RESTful_Hello_Dolly_For_Your_Song {
 
-	/* The one instance of RESTful Hello Dolly Routes. */
+	// The one instance of RESTful Hello Dolly Routes.
 	private static $instance;
 	
-	/* Instantiate or return the one RESTful Hello Dolly Routes instance. */
+	// Instantiate or return the one RESTful Hello Dolly Routes instance.
 	public static function instance() {
 	
 		if ( is_null( self::$instance ) ) {
@@ -41,12 +43,12 @@ class RESTful_Hello_Dolly_For_Your_Song {
 		return self::$instance;
 	}
 	
-	/* Construct the object. */
+	// Construct the object.
 	public function __construct() {
 			add_action( 'rest_api_init', array( $this, 'register_routes' ) );
 	}
 	
-	/* Register the API routes */
+	// Register the API routes
 	public function register_routes() {
 	
 		// Return a random Hello Dolly For Your Song line
@@ -56,20 +58,33 @@ class RESTful_Hello_Dolly_For_Your_Song {
 		) );
 	}
 	
-	/* Use the search endpoint to get a list of recent articles that were published */
+	// Use the search endpoint to get a list of recent articles that were published
 	public function rest_get_hello_dolly_for_your_song( $request ) {
 		$hdfys_rest_output=hdfys_get_anything();
 		return $hdfys_rest_output;
 	}
 	
-	} // class RESTful_Hello_Dolly_For_Your_Song
+} // class RESTful_Hello_Dolly_For_Your_Song
+
+/**
+ * Return RESTful Hello Dolly For your Song Output.
+ *
+ * Wrapper Function
+ * Code was written from Jake Spurlock
+ * Taken from the restful hello dolly plugin
+ *
+ * @since 0.12
+ * 
+ * @link https://developer.wordpress.org/rest-api/
+ * @link http://jakespurlock.com
+ * @link https://wordpress.org/plugins/restful-hello-dolly/
+ */
+
+function RESTful_Hello_Dolly_For_Your_Song() {
+	return RESTful_Hello_Dolly_For_Your_Song::instance();
+}
 	
-	/* Wrapper function to return the one RESTful Hello Dolly Output instance. */
-	function RESTful_Hello_Dolly_For_Your_Song() {
-		return RESTful_Hello_Dolly_For_Your_Song::instance();
-	}
-	
-	/* Kick off the class. */
-	add_action( 'init', 'RESTful_Hello_Dolly_For_Your_Song' );
+// Kick off the class.
+add_action( 'init', 'RESTful_Hello_Dolly_For_Your_Song' );
 
 ?>

@@ -1,24 +1,28 @@
 <?php
 
-/*
-All things related to the shortcode
-*/
+/**
+ * Site Health
+ * 
+ * @link https://make.wordpress.org/core/2019/04/25/site-health-check-in-5-2/
+ * 
+ * @package Hello Dolly For Your Song
+ * @since 0.17
+ */
 
-/*
-Security
-*/
-
-/* This avoids code execution without WordPress is loaded. */
+// Avoids code execution without WordPress is loaded (Security Measure)
 if (!defined('ABSPATH'))
 {
 	exit;
 }
 
-/*
-Site Health
-*/
+/**
+ * Add Hello Dolly for Your Song test to Site Health.
+ *
+ * @since 0.16
+ *
+ * @return array Site Health Test
+ */
 
-/* This adds an additional Test to Site Health */
 function hdfys_add_hello_dolly_test( $tests ) {
     $tests['direct']['hdfys_plugin'] = array(
         'label' => __( 'Hello Dolly For Your Song', 'hello-dolly-for-your-song' ),
@@ -28,7 +32,14 @@ function hdfys_add_hello_dolly_test( $tests ) {
 }
 add_filter( 'site_status_tests', 'hdfys_add_hello_dolly_test' );
 
-/* This prints the Test Results on the Site Health Page */
+/**
+ * Create the Site Health Test Output.
+ *
+ * @since 0.16
+ *
+ * @return array Test Results
+ */
+
 function hdfys_hello_dolly_test() {
 
 	// Positive Check
@@ -65,7 +76,16 @@ function hdfys_hello_dolly_test() {
     return $result;
 }
 
-/* This is the test to execute */
+/**
+ * Execute the site health test.
+ * 
+ * Checks if the plugin Hello Dolly is active
+ *
+ * @since 0.16
+ *
+ * @return boolean Result of the test
+ */
+
 function hdfys_check_hello_dolly() {
 	if ( is_plugin_active('hello-dolly/hello.php') ) {
 		return true;
@@ -74,7 +94,16 @@ function hdfys_check_hello_dolly() {
 	}
 }
 
-/* This adds debug info to Site Health */
+/**
+ * Add Hello Dolly to WordPress debug info.
+ * 
+ * Functions adds the maintained text to debug info.
+ *
+ * @since 0.16
+ *
+ * @return array debug information
+ */
+
 function hdfys_add_debug_info( $debug_info ) {
     $debug_info['hdfys'] = array(
         'label'    => __( 'Hello Dolly For Your Song', 'hello-dolly-for-your-song' ),

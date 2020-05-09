@@ -4,7 +4,7 @@
 Plugin Name:  Hello Dolly For Your Song
 Plugin URI:   https://www.unmus.de/wordpress-plugin-hello-dolly-for-your-song/
 Description:  This simple plugin shows a random line of any text in your blog.
-Version:	  0.16
+Version:	  0.17
 Author:       Marco Hitschler
 Author URI:   https://www.unmus.de/
 License:      GPL3

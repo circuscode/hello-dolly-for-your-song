@@ -1,18 +1,18 @@
 on:
   push:
     branches:
-      - master
+      - deployment/dev
 name: Deploy@Dev
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v2.1.0
       with:
         fetch-depth: 2
     - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@3.0.0
+      uses: SamKirkland/FTP-Deploy-Action@3.1.0
       with:
         ftp-server: ftp://unmus.de/unmus/dev/wp-content/plugins/hello-dolly-for-your-song
         ftp-username: ${{ secrets.FTP_USER_GUTHUBDEPLOY }}

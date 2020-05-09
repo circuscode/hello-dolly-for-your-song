@@ -44,5 +44,8 @@ msgstr "El plugin Hello Dolly está activo."
 msgid "Plugin Hello Dolly is not active."
 msgstr "El plugin Hello Dolly no está activo."
 
-msgid "The Plugin Hello Dolly is active. Hello Dolly For Your Song and Hello Dolly should not run in parallel. One of them should be deactivated."
-msgstr "El plugin Hello Dolly está activo. Hello Dolly y Hello Dolly para tu canción no deberían funcionar al mismo tiempo. Uno de ellos debe ser desactivado."
+msgid "Hello Dolly and Hello Dolly For Your Song should not run at the same time. One of them should be deactivated."
+msgstr "Hello Dolly y Hello Dolly For Your Song no deben ser interpretadas simultáneamente. Uno de ellos debe ser desactivado."
+
+msgid "It makes no sense to run the plugins Hello Dolly and Hello Dolly For Your Song simultaneously."
+msgstr "No tiene sentido ejecutar los plugins Hello Dolly y Hello Dolly For Your Song simultáneamente."

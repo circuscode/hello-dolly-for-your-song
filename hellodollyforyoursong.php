@@ -13,21 +13,15 @@ Text Domain:  hello-dolly-for-your-song
 Domain Path:  /languages
 */
 
-/*
-Security
-*/
-
-/* This avoids code execution without WordPress is loaded. */
+// Avoids code execution without WordPress is loaded (Security Measure)
 if (!defined('ABSPATH'))
 {
 	exit;
 }
 
-/*
-Basic Setup
-*/
-
-/* This includes the code files of the plugin */
+/**
+ * Include the code files of the plugin (basic setup).
+ */
 
 require_once('hdfys_translations.php');
 require_once('hdfys_installation.php');
@@ -43,11 +37,13 @@ require_once('hdfys_gutenberg.php');
 require_once('hdfys_sitehealth.php');
 require_once('hdfys_api.php');
 
-/*
-Customizing @ Plugin Page
-*/
+/**
+ * Add the settings link on the plugin page.
+ * 
+ * @package Hello Dolly For Your Song
+ * @since 0.10
+ */
 
-/* This adds the settings link on the plugin page */
 function hdfys_add_plugin_page_links ( $links ) {
 	$hdfys_links = array('<a href="' . admin_url( 'options-general.php?page=hdfys_settings.php' ) . '">'. __('Options','hello-dolly-for-your-song').'</a>',);
 	return array_merge( $links, $hdfys_links );

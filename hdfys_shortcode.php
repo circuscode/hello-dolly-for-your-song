@@ -1,24 +1,28 @@
 <?php
 
-/*
-All things related to the shortcode
-*/
+/**
+ * Shortcode
+ * 
+ * @link https://developer.wordpress.org/plugins/shortcodes/
+ * 
+ * @package Hello Dolly For Your Song
+ * @since 0.17
+ */
 
-/*
-Security
-*/
-
-/* This avoids code execution without WordPress is loaded. */
+// Avoids code execution without WordPress is loaded (Security Measure)
 if (!defined('ABSPATH'))
 {
 	exit;
 }
 
-/*
-Shortcode
-*/
+/**
+ * Create the unbelievable shortcode ;-)
+ *
+ * @since 0.5
+ *
+ * @return string Shortcode HTML markup
+ */
 
-/* The Unbelievable Shortcode ;-) */
 function hdfys_shortcode() {
 	$shortcode_line=hdfys_get_anything();
 	$hdfys_shortcode_output= '<p class="hdfys shortcode">'. $shortcode_line .'</p>';

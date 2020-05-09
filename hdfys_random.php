@@ -13,7 +13,7 @@ if ( !defined('ABSPATH') ) {
 }
 
 /**
- * Returns a random line from custom text
+ * Returns a random line from custom text.
  *
  * @since 0.1
  * 
@@ -33,7 +33,7 @@ function hdfys_get_lyric() {
 }
 
 /**
- * Returns a random line from Hello Dolly
+ * Returns a random line from Hello Dolly.
  *
  * @since 0.1
  * 
@@ -80,7 +80,7 @@ function hdfys_get_hello_dolly() {
 }
 
 /**
- * Catches a random line from a given text
+ * Catches a random line from a given text.
  *
  * @since 0.1
  * 
@@ -93,7 +93,7 @@ function hdfys_random_line ($text) {
 }
 
 /**
- * Deliver a random line from custom text or Hello Dolly
+ * Deliver a random line from custom text or Hello Dolly.
  *
  * @since 0.1
  * 

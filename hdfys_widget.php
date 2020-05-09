@@ -26,7 +26,7 @@ class hdfys_widget extends WP_Widget {
 		parent::__construct(
 		'hdfys_widget',
 		'Hello Dolly For Your Song',
-		array( 'description' => __( 'Show a custom line of your text', 'hello-dolly-for-your-song'  ), )
+		array( 'description' => __( 'Displays a random line of your text', 'hello-dolly-for-your-song'  ), )
 		);
 	}
 

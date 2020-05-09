@@ -1,70 +1,51 @@
-msgid ""
-msgstr ""
 "Project-Id-Version: Hello Dolly For Your Song\n"
+"Report-Msgid-Bugs-To: https://github.com/circuscode/hello-dolly-for-your-song/issues\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-03-29 17:18+0200\n"
-"Last-Translator: Andrew Kurtis\n"
-"Language-Team: Marco Hitschler <marco.hitschler@unmus.de>\n"
-"MIME-Version: 1.0\n"
+"PO-Revision-Date: 2020-05-03 21:18+0200\n"
+"Last-Translator: Andrew Kurtis from WebHostingHub\n"
+"Language-Team: \n"
+"Language: es_ES\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: .\n"
-"Language: es\n"
+"MIME-Version: 1.0\n"
 "X-Generator: Poedit 2.3\n"
-"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
-msgid "Which song do you like?"
-msgstr "¿Qué canción le gusta?"
-
-msgid "What song touched you?"
-msgstr "¿Qué canción le ha “tocado”?"
-
-msgid "What song brings you back fond memories?"
-msgstr "¿Qué canción te trae buenos recuerdos?"
-
-msgid "Enter the lyrics into the form."
-msgstr "Ingrese la letra en el formulario."
-
-msgid "Settings saved!"
-msgstr "¡Configuración guardada!"
-
-msgid "Show a custom line of your text"
-msgstr "Mostrar una línea personalizada de su texto"
-
-msgid "Options"
-msgstr "Configuración"
-
-msgid "Songtext"
-msgstr "Letra"
-
-msgid "Post your lyrics."
-msgstr "Publicar sus letras."
-
-msgid "Text"
-msgstr "Texto"
-
-msgid "Just one thing"
-msgstr "Sólo una cosa"
+msgid ""
+msgstr ""
 
 msgid "Hello Dolly For Your Song"
 msgstr "Hello Dolly For Your Song"
 
-msgid "Plugin Hello Dolly is not active."
-msgstr "El plugin Hello Dolly no está activo."
+msgid "Options"
+msgstr "Configuración"
+
+msgid "Plugin"
+msgstr "Plugin"
+
+msgid "Basic Settings"
+msgstr "Configuración básica"
+
+msgid "Custom Text"
+msgstr "Texto personalizado"
+
+msgid "Displays a random line of your text"
+msgstr "Muestra una línea aleatoria de su texto"
+
+msgid "Plugin Administration"
+msgstr "Administración de Plugins"
 
 msgid "Performance"
 msgstr "Actuación"
 
-msgid "It does not make sense, running the plugins Hello Dolly For Your Song and Hello Dolly in parallel."
-msgstr "No tiene sentido, ejecutar los plugins Hello Dolly For Your Song y Hello Dolly en paralelo."
-
 msgid "Plugin Hello Dolly is active."
 msgstr "El plugin Hello Dolly está activo."
 
-msgid "The Plugin Hello Dolly is active. Hello Dolly For Your Song and Hello Dolly should not run in parallel. One of them should be deactivated."
-msgstr "El Plugin Hello Dolly está activo. Hello Dolly For Your Song y Hello Dolly no deben funcionar en paralelo. Uno de ellos debe ser desactivado."
+msgid "Plugin Hello Dolly is not active."
+msgstr "El plugin Hello Dolly no está activo."
 
-msgid "Plugin Administration"
-msgstr "Administración de Plugins"
+msgid "Hello Dolly and Hello Dolly For Your Song should not run at the same time. One of them should be deactivated."
+msgstr "Hello Dolly y Hello Dolly For Your Song no deben ser interpretadas simultáneamente. Uno de ellos debe ser desactivado."
+
+msgid "It makes no sense to run the plugins Hello Dolly and Hello Dolly For Your Song simultaneously."
+msgstr "No tiene sentido ejecutar los plugins Hello Dolly y Hello Dolly For Your Song simultáneamente."

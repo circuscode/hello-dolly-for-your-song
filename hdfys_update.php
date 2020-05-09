@@ -1,24 +1,24 @@
 <?php
 
-/*
-All things related to Plugin Updates
-*/
+/**
+ * Update Process
+ * 
+ * @package Hello Dolly For Your Song
+ * @since 0.17
+ */
 
-/*
-Security
-*/
-
-/* This avoids code execution without WordPress is loaded. */
+// Avoids code execution if WordPress is not loaded (Security Measure)
 if (!defined('ABSPATH'))
 {
 	exit;
 }
 
-/*
-Update
-*/
+/**
+ * Run the update process.
+ *
+ * @since 0.7
+ */
 
-/* This is the update process */
 function hdfys_update () {
 
 $hdfys_previous_version = get_option('hdfys_version');
@@ -68,6 +68,10 @@ update_option('hdfys_version','15');
 /* Update Process Version 0.16 */
 if($hdfys_previous_version==15) {
 update_option('hdfys_version','16');
+}
+/* Update Process Version 0.17 */
+if($hdfys_previous_version==16) {
+update_option('hdfys_version','17');
 }
 
 }

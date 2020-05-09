@@ -1,24 +1,24 @@
 <?php
 
-/*
-All things related to the shortcode
-*/
+/**
+ * Template Tag
+ * 
+ * @package Hello Dolly For Your Song
+ * @since 0.17
+ */
 
-/*
-Security
-*/
-
-/* This avoids code execution without WordPress is loaded. */
+// Avoids code execution if WordPress is not loaded (Security Measure)
 if (!defined('ABSPATH'))
 {
 	exit;
 }
 
-/*
-Template Tag
-*/
+/**
+ * Create the unbelievable template tag ;-)
+ *
+ * @since 0.8
+ */
 
-/* The Unbelievable Template Tag ;-) */
 function hello_dolly_for_your_song() {
 	$hdfys_template_tag_line = hdfys_get_anything();
 	$hdfys_template_tag_output='<div class="hdfys templatetag">'. $hdfys_template_tag_line .'</div>';

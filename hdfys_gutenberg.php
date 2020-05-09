@@ -9,7 +9,7 @@
  * @since 0.17
  */
 
-// Avoids code execution without WordPress is loaded (Security Measure)
+// Avoids code execution if WordPress is not loaded (Security Measure)
 if ( !defined('ABSPATH') ) {
 	exit;
 }
@@ -21,7 +21,7 @@ global $wp_version;
 if ( version_compare( $wp_version, '5', '>=' ) ) {
 
 /**
- * Prepare Block Content
+ * Prepare Block Content.
  *
  * @since 0.13
  *
@@ -44,9 +44,9 @@ function hdfys_gutenberg_block() {
 }
 
 /**
- * Gutenberg Block Assets
+ * Gutenberg Block Assets.
  *
- * Following code is based on the Gutenberg Boilerplates from Ahmad Awais
+ * Following code is based on the Gutenberg Boilerplates from Ahmad Awais.
  * 
  * @link https://ahmadawais.com/gutenberg-boilerplate/
  * 

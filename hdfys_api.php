@@ -11,15 +11,16 @@
  * @since 0.17
  */
 
-// Avoids code execution without WordPress is loaded (Security Measure)
+// Avoids code execution if WordPress is not loaded (Security Measure)
 if ( !defined('ABSPATH') ) {
 	exit;
 }
 
 /**
- * Returns the random line
+ * Returns the random line.
  *
  * This api function can be used to get the random line in external code. 
+ * Filter will not be applied on this getter function.
  *
  * @since 0.11
  *
@@ -32,7 +33,7 @@ function get_hello_dolly_for_your_song() {
 }
 
 /**
- * Does anything when new text will be saved in the plugin settings
+ * Does anything when new text will be saved in the plugin settings.
  *
  * Code Example Action Usage:
  * 
@@ -50,7 +51,7 @@ function get_hello_dolly_for_your_song() {
  */
 
 /**
- * Filters the output before it will rendered on the user interface
+ * Filters the output before it will rendered on the user interface.
  *
  * Code Example Filter Usage:
  * 

@@ -18,7 +18,7 @@ This simple plugin is an extended version of the famous hello dolly plugin by Ma
 * Options Page to define a custom song text
 * Site Health Integration
 * Hidden Options
-* Languages: English, German, Spanish, French, Indonesian
+* Languages: English, German, Spanish, French, Indonesian, Russian
 
 ## Installation
 
@@ -32,15 +32,19 @@ This simple plugin is an extended version of the famous hello dolly plugin by Ma
 2. That is all!
 
 ## Gutenberg Block Category
+
 Widgets
 
 ## Shortcode
+
 [hdfys]
 
 ## Template Tag
+
 hello_dolly_for_your_song()
 
 ## Get Function
+
 get_hello_dolly_for_your_song()
 
 ## REST API Endpoint
@@ -116,6 +120,10 @@ Several admin pages like settings are excluded, because some plugins do not use 
 * [poedit](https://poedit.net)
 * [Postman](https://www.postman.com)
 
+## Code Documentation 
+
+This project follows the inline code documentation standard of WordPress.
+
 ## License
 
 This project is licensed under the GPL3 License.
@@ -129,12 +137,13 @@ This project is licensed under the GPL3 License.
 
 ## Changelog
 
-### 0.17 (this, in development, not released)
+### 0.17
 
-* april 2020
+* may 2020
 * Russian Translation
-* Better readable code
+* Better Code Documentation
 * Bugfix: Broken Plugin Administration Link
+* Many internal improvements
 
 ### 0.16
 

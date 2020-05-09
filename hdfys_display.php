@@ -8,13 +8,13 @@
  */
 
 
-// Avoids code execution without WordPress is loaded (Security Measure)
+// Avoids code execution if WordPress is not loaded (Security Measure)
 if ( !defined('ABSPATH') ) {
 	exit;
 }
 
 /**
- * Prints the random line to the admin head in WordPress
+ * Prints the random line to the admin head in WordPress.
  *
  * @since 0.3
  * @since 0.9 Hidden Setting
@@ -38,7 +38,7 @@ function hdfys() {
 add_action( 'admin_notices', 'hdfys' );
 
 /**
- * Checks the page and decides to print the line or not
+ * Checks the page and decides to print the line or not.
  *
  * @since 0.14
  * 
@@ -75,7 +75,7 @@ function hdfys_where_am_i() {
 }
 
 /**
- * Adds the required CSS styling in the WordPress Backend
+ * Adds the required CSS styling in the WordPress Backend.
  *
  * @since 0.1
  */

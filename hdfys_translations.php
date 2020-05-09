@@ -22,6 +22,6 @@ if (!defined('ABSPATH'))
 function hdfys_load_textdomain() {
 	load_plugin_textdomain('hello-dolly-for-your-song', false, dirname( plugin_basename( __FILE__ ) ) . '/languages');
 }
-add_action( 'init', 'hdfys_load_textdomain' );
+add_action( 'plugins_loaded', 'hdfys_load_textdomain' );
 
 ?>

@@ -45,26 +45,4 @@ function hdfys_deactivate () {
 }
 register_deactivation_hook( __FILE__ , 'hdfys_deactivate' );
 
-/**
- * Deinstall the plugin.
- *
- * @since 0.7
- */
-
-function hdfys_delete () {
-
-	/* Checks, if the plugin have been activated before */
-	if ( get_option('hdfys_activated') ) {
-
-	/* Remove all settings */
-	delete_option('hdfys_activated');
-	delete_option('hdfys_song');
-	delete_option('hdfys_version');
-	delete_option('widget_hdfys_widget');
-	delete_option('hdfys_admin_lyric');
-	delete_option('hdfys_text_updated');
-}
-}
-register_uninstall_hook( __FILE__ , 'hdfys_delete' );
-
 ?>

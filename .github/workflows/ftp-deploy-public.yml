@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - deployment/public
+      - master
 name: Deploy@Public
 jobs:
   FTP-Deploy-Action:

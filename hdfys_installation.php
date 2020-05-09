@@ -13,7 +13,7 @@ if ( !defined('ABSPATH') ) {
 }
 
 /**
- * Initialize the plugin
+ * Initialize the plugin.
  *
  * @since 0.7
  */
@@ -35,7 +35,7 @@ function hdfys_activate () {
 register_activation_hook( __FILE__ , 'hdfys_activate' );
 
 /**
- * Deactivate the plugin
+ * Deactivate the plugin.
  *
  * @since 0.7
  */
@@ -46,7 +46,7 @@ function hdfys_deactivate () {
 register_deactivation_hook( __FILE__ , 'hdfys_deactivate' );
 
 /**
- * Deinstall the plugin
+ * Deinstall the plugin.
  *
  * @since 0.7
  */

@@ -17,7 +17,7 @@ if ( !defined('ABSPATH') ) {
 }
 
 /**
- * Returns the random line
+ * Returns the random line.
  *
  * This api function can be used to get the random line in external code. 
  *
@@ -32,7 +32,7 @@ function get_hello_dolly_for_your_song() {
 }
 
 /**
- * Does anything when new text will be saved in the plugin settings
+ * Does anything when new text will be saved in the plugin settings.
  *
  * Code Example Action Usage:
  * 
@@ -50,7 +50,7 @@ function get_hello_dolly_for_your_song() {
  */
 
 /**
- * Filters the output before it will rendered on the user interface
+ * Filters the output before it will rendered on the user interface.
  *
  * Code Example Filter Usage:
  * 

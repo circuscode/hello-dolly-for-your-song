@@ -1,27 +1,29 @@
 <?php
 
-/*
-All things related to the options page
-*/
+/**
+ * Settings Page
+ * 
+ * @link https://codex.wordpress.org/Settings_API
+ * 
+ * @package Hello Dolly For Your Song
+ * @since 0.17
+ */
 
-/*
-Security
-*/
-
-/* This avoids code execution without WordPress is loaded. */
+// Avoids code execution without WordPress is loaded (Security Measure)
 if (!defined('ABSPATH'))
 {
 	exit;
 }
 
-/*
-Options Page
-*/
+/**
+ * Create the options page.
+ *
+ * @since 0.7
+ */
 
-/* This generates the option page of hello dolly for your song */
 function hdfys_options() {
 
-	/* Fire Action if Text was updated */
+	/* Fire Action if custom text was updated */
 	$hdfys_text_update=get_option('hdfys_text_updated');
 	if($hdfys_text_update==1)
 	{	
@@ -29,12 +31,14 @@ function hdfys_options() {
 		update_option('hdfys_text_updated','0');
 	}
 	
+	// Output the headline
 	echo '
 	<div class="wrap">
 	<h1>'. __('Options','hello-dolly-for-your-song').' › Hello Dolly For Your Song</h1>
 
 	<form method="post" action="options.php">';
 
+	// Create the option
 	do_settings_sections( 'hdfys-options' );
 	settings_fields( 'hdfys_settings' );
 	submit_button();
@@ -42,35 +46,64 @@ function hdfys_options() {
 	echo '</form></div><div class="clear"></div>';
 }
 
-/* This defines the textfield on the options page */
+/**
+ * Create input field for the custom text.
+ *
+ * @since 0.7
+ */
+
 function hdfys_options_display_songtext() {
 	echo '<textarea style="width:600px;height:400px;" class="regular-text" type="text" name="hdfys_song" id="hdfys_song">'. get_option('hdfys_song') .'</textarea>';
 }
 
-/* This defines the label of the textfield on the options page */
+/**
+ * Create label of the input field for the custom text.
+ *
+ * @since 0.7
+ */
+
 function hdfys_options_content_description() {
-	echo '<p>'. __('Post your lyrics.','hello-dolly-for-your-song').'</p>';
+	echo '<p>'. __('Basic Settings','hello-dolly-for-your-song').'</p>';
 }
 
-/* This generates the content on options page */
+/**
+ * Output the options
+ * 
+ * The functions uses the settings API of WordPress
+ *
+ * @since 0.7
+ */
+
 function hdfys_options_display() {
 
-	add_settings_section("content_settings_section", __('Just one thing','hello-dolly-for-your-song') , "hdfys_options_content_description", "hdfys-options");
+	add_settings_section("content_settings_section", '' , "hdfys_options_content_description", "hdfys-options");
+	
+	add_settings_section("content_settings_section", __('Plugin','hello-dolly-for-your-song') , "hdfys_options_content_description", "hdfys-options");
 
-	add_settings_field("hdfys_song", __('Text','hello-dolly-for-your-song') , "hdfys_options_display_songtext", "hdfys-options", "content_settings_section");
+	add_settings_field("hdfys_song", __('Custom Text','hello-dolly-for-your-song') , "hdfys_options_display_songtext", "hdfys-options", "content_settings_section");
 
 	register_setting("hdfys_settings", "hdfys_song", "hdfys_validate_songtext");
 }
 add_action("admin_init", "hdfys_options_display");
 
-/* This is the validation of the user input */
+/**
+ * Validate the user input
+ *
+ * @since 0.7
+ */
+
 function hdfys_validate_songtext ( $songtext ) {
 	update_option('hdfys_text_updated',"1");
 	$songtext = preg_replace("/[\r\n]+[\s\t]*[\r\n]+/","\n", $songtext);
     return $songtext;
 }
 
-/* This integrates the plugin options page into the wordpress options menu */
+/**
+ * Integrate the options page into the menu
+ *
+ * @since 0.7
+ */
+
 function hdfys_show_options() {
 	add_options_page('Hello Dolly For Your Song', 'Hello Dolly Your Song', 10, basename(__FILE__), "hdfys_options");
 }

@@ -109,7 +109,7 @@ function hdfys_add_debug_info( $debug_info ) {
         'label'    => __( 'Hello Dolly For Your Song', 'hello-dolly-for-your-song' ),
         'fields'   => array(
             'license' => array(
-                'label'    => __( 'Text', 'hello-dolly-for-your-song' ),
+                'label'    => __( 'Custom Text', 'hello-dolly-for-your-song' ),
                 'value'   => get_option( 'hdfys_song' ),
                 'private' => true,
             ),

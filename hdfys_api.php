@@ -20,6 +20,7 @@ if ( !defined('ABSPATH') ) {
  * Returns the random line.
  *
  * This api function can be used to get the random line in external code. 
+ * Filter will not be applied on this getter function.
  *
  * @since 0.11
  *

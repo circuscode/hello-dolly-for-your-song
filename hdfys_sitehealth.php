@@ -9,7 +9,7 @@
  * @since 0.17
  */
 
-// Avoids code execution without WordPress is loaded (Security Measure)
+// Avoids code execution if WordPress is not loaded (Security Measure)
 if (!defined('ABSPATH'))
 {
 	exit;
@@ -52,7 +52,7 @@ function hdfys_hello_dolly_test() {
         ),
         'description' => sprintf(
             '<p>%s</p>',
-            __( 'It does not make sense, running the plugins Hello Dolly For Your Song and Hello Dolly in parallel.', 'hello-dolly-for-your-song' )
+            __( 'It makes no sense to run the plugins Hello Dolly and Hello Dolly For Your Song simultaneously.', 'hello-dolly-for-your-song' )
         ),
         'actions'     => '',
         'test'        => 'hdfys_plugin',
@@ -64,7 +64,7 @@ function hdfys_hello_dolly_test() {
         $result['label'] = __( 'Plugin Hello Dolly is active.', 'hello-dolly-for-your-song' );
         $result['description'] = sprintf(
             '<p>%s</p>',
-            __( 'The Plugin Hello Dolly is active. Hello Dolly For Your Song and Hello Dolly should not run in parallel. One of them should be deactivated.', 'hello-dolly-for-your-song' )
+            __( 'Hello Dolly and Hello Dolly For Your Song should not run at the same time. One of them should be deactivated.', 'hello-dolly-for-your-song' )
         );
         $result['actions'] .= sprintf(
             '<p><a href="%s">%s</a></p>',
@@ -109,7 +109,7 @@ function hdfys_add_debug_info( $debug_info ) {
         'label'    => __( 'Hello Dolly For Your Song', 'hello-dolly-for-your-song' ),
         'fields'   => array(
             'license' => array(
-                'label'    => __( 'Text', 'hello-dolly-for-your-song' ),
+                'label'    => __( 'Custom Text', 'hello-dolly-for-your-song' ),
                 'value'   => get_option( 'hdfys_song' ),
                 'private' => true,
             ),

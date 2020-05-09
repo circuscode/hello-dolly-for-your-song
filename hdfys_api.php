@@ -11,7 +11,7 @@
  * @since 0.17
  */
 
-// Avoids code execution without WordPress is loaded (Security Measure)
+// Avoids code execution if WordPress is not loaded (Security Measure)
 if ( !defined('ABSPATH') ) {
 	exit;
 }
@@ -20,6 +20,7 @@ if ( !defined('ABSPATH') ) {
  * Returns the random line.
  *
  * This api function can be used to get the random line in external code. 
+ * Filter will not be applied on this getter function.
  *
  * @since 0.11
  *

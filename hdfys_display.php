@@ -8,7 +8,7 @@
  */
 
 
-// Avoids code execution without WordPress is loaded (Security Measure)
+// Avoids code execution if WordPress is not loaded (Security Measure)
 if ( !defined('ABSPATH') ) {
 	exit;
 }

@@ -1,10 +1,10 @@
 === Hello Dolly For Your Song ===
 Contributors: unmus, jordansilaen
-Tags: hello world, love, random, lyric, admin
+Tags: hello world, love, random, learning wordpress, admin
 Requires at least: 4.4
 Requires PHP: 7.0
-Tested up to: 5.3.2
-Stable tag: 0.16
+Tested up to: 5.4.1
+Stable tag: 0.17
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -26,7 +26,7 @@ This simple plugin is an extended version of the famous hello dolly plugin by Ma
 * Options Page to define a custom song text
 * Site Health Integration
 * Hidden Options
-* Languages: English, German, Spanish, French, Indonesian
+* Languages: English, German, Spanish, French, Indonesian, Russian
 
 = Related Links =
 
@@ -101,11 +101,12 @@ Several admin pages like settings are excluded, because some plugins do not use 
 
 == Changelog ==
 
-= 0.17 (this, in development, not released) =
-* april 2020
+= 0.17 =
+* may 2020
 * Russian Translation
-* Better readable code
+* Better Code Documentation
 * Bugfix: Broken Plugin Administration Link
+* Many internal improvements
 
 = 0.16 =
 * march 2020

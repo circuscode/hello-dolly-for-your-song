@@ -118,12 +118,12 @@ Several admin pages like settings are excluded, because some plugins do not use 
 
 This repository follows the git-flow workflow.
 
-* master branch is the latest release.
-* develop branch is the current state of development.
-* feature branches contain dedicated features in development.
-* bugfix branches contain dedicated bugfixes in development.
-* hotfix branches contain dedicated bugfixes in development.
-* release branches contain the next release in preparation.
+* master branch is the latest release
+* develop branch is the current state of development
+* feature branches contain dedicated features in development
+* bugfix branches contain dedicated bugfixes in development
+* hotfix branches contain dedicated bugfixes in development
+* release branches contain the next release in preparation
 
 ## Unterstanding the Deployment
 

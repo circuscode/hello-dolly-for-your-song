@@ -114,6 +114,22 @@ The HTML-oupt of the gutenberg block, template tag or shortcode can be manipulat
 
 Several admin pages like settings are excluded, because some plugins do not use the wordpress standard layout. To avoid breaks in the user design, these pages are excluded.
 
+## Branches
+
+This repository follows the git-flow workflow.
+
+* master branch is the latest release
+* develop branch is the current state of development
+* feature branches contain dedicated features in development
+* bugfix branches contain dedicated bugfixes in development
+* hotfix branches contain dedicated bugfixes in development
+* release branches contain the next release in preparation
+
+## Unterstanding the Deployment
+
+Releases in the WordPress Plugin Directory will be processed via SVN. 
+The Version-to-Ship will be created manually on GitHub. See Release Section.
+
 ## Built With
 
 * [Visual Studio Code](https://code.visualstudio.com)

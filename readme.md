@@ -116,37 +116,19 @@ Several admin pages like settings are excluded, because some plugins do not use 
 
 ## Branches
 
-_This repository follows the git-flow workflow._
+This repository follows the git-flow workflow.
 
-### Master
-
-The master branch is the latest release.
-
-### Develop
-
-The develop branch is the current state of development.
-
-### Feature
-
-Feature branches contain dedicated features in development.
-
-### Bugfix
-
-Bugfix branches contain dedicated bugfixes in development.
-
-### Hotfix
-
-Hotfix branches contain dedicated bugfixes in development.
-
-### Release
-
-Release branches contain the next release in preparation.
+* master branch is the latest release.
+* develop branch is the current state of development.
+* feature branches contain dedicated features in development.
+* bugfix branches contain dedicated bugfixes in development.
+* hotfix branches contain dedicated bugfixes in development.
+* release branches contain the next release in preparation.
 
 ## Unterstanding the Deployment
 
-#x# Release Deployment
-
-Releases in the WordPress Plugin Directory will be processed via SVN. The Version-to-Ship will be created manually on GitHub. See Release Section.
+Releases in the WordPress Plugin Directory will be processed via SVN. 
+The Version-to-Ship will be created manually on GitHub. See Release Section.
 
 ## Built With
 

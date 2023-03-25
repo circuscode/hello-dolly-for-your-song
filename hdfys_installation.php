@@ -32,7 +32,6 @@ function hdfys_activate () {
 	add_option('hdfys_text_updated',"0");
 	}
 }
-register_activation_hook( __FILE__ , 'hdfys_activate' );
 
 /**
  * Deactivate the plugin.
@@ -43,6 +42,5 @@ register_activation_hook( __FILE__ , 'hdfys_activate' );
 function hdfys_deactivate () {
 	// nothing to do
 }
-register_deactivation_hook( __FILE__ , 'hdfys_deactivate' );
 
 ?>

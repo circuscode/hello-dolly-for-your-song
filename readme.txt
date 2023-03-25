@@ -104,6 +104,7 @@ Several admin pages like settings are excluded, because some plugins do not use 
 = 0.18 =
 * april 2023
 * Bugfix: LastChar is blank
+* Bugfix: Installation Process
 * Changed: Page Uploads excluded
 * Others: Depreciated Authorization replaced
 

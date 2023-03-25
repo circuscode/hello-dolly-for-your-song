@@ -38,6 +38,13 @@ require_once('hdfys_sitehealth.php');
 require_once('hdfys_api.php');
 
 /**
+ * Installation & Deactivation
+ */
+
+register_activation_hook( __FILE__ , 'hdfys_activate' );
+register_deactivation_hook( __FILE__ , 'hdfys_deactivate' );
+
+/**
  * Add the settings link on the plugin page.
  * 
  * @package Hello Dolly For Your Song

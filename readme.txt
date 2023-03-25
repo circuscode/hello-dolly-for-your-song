@@ -204,6 +204,9 @@ Several admin pages like settings are excluded, because some plugins do not use 
 == Upgrade Notice ==
 
 = 0.17 =
+This version is a maintenance release (no new features, but bugfixes).
+
+= 0.17 =
 This version brings russian translation.
 
 = 0.16 =

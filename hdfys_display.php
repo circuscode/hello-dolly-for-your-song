@@ -51,7 +51,7 @@ function hdfys_where_am_i() {
 	global $pagenow;
 
 	// Run on specific pages only
-    if ( $pagenow == 'index.php' OR $pagenow == 'edit.php' OR $pagenow == 'upload.php' OR $pagenow == 'edit-comments.php' OR $pagenow == 'post.php') {
+    if ( $pagenow == 'index.php' OR $pagenow == 'edit.php' OR $pagenow == 'edit-comments.php' OR $pagenow == 'post.php') {
 		
 		// Get Post Type
 		if (isset($_GET['post_type'])) {

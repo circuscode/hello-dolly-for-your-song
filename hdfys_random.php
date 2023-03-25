@@ -105,12 +105,16 @@ function hdfys_get_anything () {
 	// Get Custom Text
 	$text = get_option('hdfys_song');
 
-	// If Length=0 then no text is maintained
+	// If Length=0 > No text is maintained
 	$text = strlen($text);
 
 	// Decide which text to take
 	$line = ($text > 0) ? hdfys_get_lyric() : hdfys_get_hello_dolly() ;
 	
+	// If the last character of the line is blank, remove it
+	$lastchar = substr($line, -1);
+	if($lastchar == ' ') {$line = rtrim($line, " ");}
+
 	return $line;
 }
 

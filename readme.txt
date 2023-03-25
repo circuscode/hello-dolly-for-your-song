@@ -3,8 +3,8 @@ Contributors: unmus, jordansilaen
 Tags: hello world, love, random, learning wordpress, admin
 Requires at least: 4.4
 Requires PHP: 7.0
-Tested up to: 5.4.1
-Stable tag: 0.17
+Tested up to: 6.1.1
+Stable tag: 0.18
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -47,9 +47,9 @@ This simple plugin is an extended version of the famous hello dolly plugin by Ma
 
 This is Hello Dolly by Louis Armstrong. If no text is maintained in the options, the programm uses the songtext of Hello Dolly.
 
-= How can I use the gutenberg block? =
+= Where do I find the gutenberg block? =
 
-Just add the block in your content. You find the block in the category "widgets".
+You find the block in the category "widgets".
 
 = How can I use the shortcode? =
 
@@ -100,6 +100,12 @@ Several admin pages like settings are excluded, because some plugins do not use 
 1. Options Page
 
 == Changelog ==
+
+= 0.18 =
+* april 2023
+* Bugfix: LastChar is blank
+* Changed: Page Uploads excluded
+* Others: Depreciated Authorization replaced
 
 = 0.17 =
 * may 2020

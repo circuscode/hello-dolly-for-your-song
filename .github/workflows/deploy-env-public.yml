@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - public
+      - master
 name: Deploy@Public
 jobs:
   web-deploy:

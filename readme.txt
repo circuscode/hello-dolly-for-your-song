@@ -3,7 +3,7 @@ Contributors: unmus, jordansilaen
 Tags: hello world, love, random, learning wordpress, admin
 Requires at least: 4.4
 Requires PHP: 7.0
-Tested up to: 6.1.1
+Tested up to: 6.2
 Stable tag: 0.18
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -203,7 +203,7 @@ Several admin pages like settings are excluded, because some plugins do not use 
 
 == Upgrade Notice ==
 
-= 0.17 =
+= 0.18 =
 This version is a maintenance release (no new features, but bugfixes).
 
 = 0.17 =

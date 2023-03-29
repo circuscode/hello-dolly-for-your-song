@@ -1,7 +1,7 @@
 === Hello Dolly For Your Song ===
 Contributors: unmus, jordansilaen
 Tags: hello world, love, random, learning wordpress, admin
-Requires at least: 4.4
+Requires at least: 5.2
 Requires PHP: 7.0
 Tested up to: 6.2
 Stable tag: 0.18

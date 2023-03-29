@@ -66,9 +66,9 @@ The filter will be applied before output of the gutenberg block, template tag an
 
 This is Hello Dolly by Louis Armstrong. If no text is maintained in the options, the programm uses the songtext of Hello Dolly.
 
-### How can I use the gutenberg block?
+### Where do I find the gutenberg block?
 
-Just add the block in your content. You find the block in the category "widgets".
+You find the block in the category "widgets".
 
 ### How can I use the shortcode?
 
@@ -122,8 +122,8 @@ This repository follows the git-flow workflow.
 * develop branch is the current state of development
 * feature branches contain dedicated features in development
 * bugfix branches contain dedicated bugfixes in development
-* hotfix branches contain dedicated bugfixes in development
-* release branches contain the next release in preparation
+
+Hotfix and release branches will not be applied.
 
 ## Unterstanding the Deployment
 
@@ -152,6 +152,14 @@ This project is licensed under the GPL3 License.
 * <a href="https://github.com/circuscode/hello-dolly-for-your-song">Source Code @ GitHub</a>
 
 ## Changelog
+
+### 0.18
+
+* april 2023
+* Bugfix: LastChar is blank
+* Bugfix: Installation Process
+* Changed: Page Uploads excluded
+* Others: Depreciated Authorization replaced
 
 ### 0.17
 

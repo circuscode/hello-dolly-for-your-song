@@ -24,7 +24,7 @@ function hdfys_update () {
 $hdfys_previous_version = get_option('hdfys_version');
 
 /* Update Process Version 0.7 */
-  if($hdfys_previous_version==false) {
+if($hdfys_previous_version==false) {
 add_option('hdfys_activated',"1");
 add_option('hdfys_version', "7");
 $lyrics = get_option('hdfys_song');
@@ -73,7 +73,11 @@ update_option('hdfys_version','16');
 if($hdfys_previous_version==16) {
 update_option('hdfys_version','17');
 }
-
+/* Update Process Version 0.18 */
+if($hdfys_previous_version==17) {
+update_option('hdfys_version','18');
+}
+  
 }
 add_action( 'plugins_loaded', 'hdfys_update' );
 

@@ -89,7 +89,13 @@ function hdfys_get_hello_dolly() {
 
 function hdfys_random_line ($text) {
 	$text = explode( "\n", $text );
-    return wptexturize( $text[ mt_rand( 0, count( $text ) - 1 ) ] );
+    $text = wptexturize( $text[ mt_rand( 0, count( $text ) - 1 ) ] );
+
+	// If the last character of the line is blank, remove it
+	$lastchar = substr($text, -1);
+	if($lastchar == ' ') {$text = rtrim($text, " ");}
+
+	return $text;
 }
 
 /**
@@ -105,12 +111,12 @@ function hdfys_get_anything () {
 	// Get Custom Text
 	$text = get_option('hdfys_song');
 
-	// If Length=0 then no text is maintained
+	// If Length=0 > No text is maintained
 	$text = strlen($text);
 
 	// Decide which text to take
 	$line = ($text > 0) ? hdfys_get_lyric() : hdfys_get_hello_dolly() ;
-	
+
 	return $line;
 }
 

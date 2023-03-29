@@ -105,7 +105,7 @@ function hdfys_validate_songtext ( $songtext ) {
  */
 
 function hdfys_show_options() {
-	add_options_page('Hello Dolly For Your Song', 'Hello Dolly Your Song', 10, basename(__FILE__), "hdfys_options");
+	add_options_page('Hello Dolly For Your Song', 'Hello Dolly Your Song', 'manage_options', basename(__FILE__), "hdfys_options");
 }
 add_action( 'admin_menu', 'hdfys_show_options');
 

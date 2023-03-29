@@ -26,13 +26,12 @@ function hdfys_activate () {
 	/* Initialize Settings */
 	add_option('hdfys_activated',"1");
 	add_option('hdfys_song',"");
-	add_option('hdfys_version', "17");
+	add_option('hdfys_version', "18");
 	add_option('widget_hdfys_widget');
 	add_option('hdfys_admin_lyric',"1");
 	add_option('hdfys_text_updated',"0");
 	}
 }
-register_activation_hook( __FILE__ , 'hdfys_activate' );
 
 /**
  * Deactivate the plugin.
@@ -43,6 +42,5 @@ register_activation_hook( __FILE__ , 'hdfys_activate' );
 function hdfys_deactivate () {
 	// nothing to do
 }
-register_deactivation_hook( __FILE__ , 'hdfys_deactivate' );
 
 ?>

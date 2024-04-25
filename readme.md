@@ -153,6 +153,11 @@ This project is licensed under the GPL3 License.
 
 ## Changelog
 
+### 0.19
+
+* april 2024
+* Security: Echo Escaping added
+
 ### 0.18
 
 * april 2023

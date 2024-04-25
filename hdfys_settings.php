@@ -53,7 +53,7 @@ function hdfys_options() {
  */
 
 function hdfys_options_display_songtext() {
-	echo '<textarea style="width:600px;height:400px;" class="regular-text" type="text" name="hdfys_song" id="hdfys_song">'. get_option('hdfys_song') .'</textarea>';
+	echo '<textarea style="width:600px;height:400px;" class="regular-text" type="text" name="hdfys_song" id="hdfys_song">'.esc_textarea( get_option('hdfys_song')) .'</textarea>';
 }
 
 /**

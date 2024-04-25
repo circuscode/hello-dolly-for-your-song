@@ -25,7 +25,7 @@ if (!defined('ABSPATH'))
 
 function hdfys_shortcode() {
 	$shortcode_line=hdfys_get_anything();
-	$hdfys_shortcode_output= '<p class="hdfys shortcode">'. $shortcode_line .'</p>';
+	$hdfys_shortcode_output= '<p class="hdfys shortcode">'.esc_html($shortcode_line).'</p>';
 	$hdfys_shortcode_output=apply_filters( 'hdfys_output_filter', $hdfys_shortcode_output );
 	return $hdfys_shortcode_output;
 }

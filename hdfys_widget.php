@@ -39,9 +39,9 @@ class hdfys_widget extends WP_Widget {
 		echo '<aside class="widget hdfys">';
 		echo '<h3 class="widget-title hdfys">';
 			if ( ! empty( $title ) )
-				echo $title;
+				echo esc_html($title);
 		echo '</h3>';
-		echo '<p class="widget-hdfys">'.$widget_line.'</p>';
+		echo '<p class="widget-hdfys">'.esc_html($widget_line).'</p>';
 		echo '</aside>';
 	}
 

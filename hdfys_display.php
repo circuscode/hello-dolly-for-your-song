@@ -32,7 +32,7 @@ function hdfys() {
 		$line=hdfys_get_anything();
 
 		// Output
-		echo "<p class='admin-hdfys'>".$line."</p>";
+		echo "<p class='admin-hdfys'>".esc_html($line)."</p>";
 	}
 }
 add_action( 'admin_notices', 'hdfys' );

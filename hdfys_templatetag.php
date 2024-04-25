@@ -21,7 +21,7 @@ if (!defined('ABSPATH'))
 
 function hello_dolly_for_your_song() {
 	$hdfys_template_tag_line = hdfys_get_anything();
-	$hdfys_template_tag_output='<div class="hdfys templatetag">'. $hdfys_template_tag_line .'</div>';
+	$hdfys_template_tag_output='<div class="hdfys templatetag">'. esc_html($hdfys_template_tag_line) .'</div>';
 	$hdfys_template_tag_output=apply_filters( 'hdfys_output_filter', $hdfys_template_tag_output );
 	echo $hdfys_template_tag_output;
 }

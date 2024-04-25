@@ -77,6 +77,10 @@ update_option('hdfys_version','17');
 if($hdfys_previous_version==17) {
 update_option('hdfys_version','18');
 }
+/* Update Process Version 0.19 */
+if($hdfys_previous_version==18) {
+update_option('hdfys_version','19');
+}
   
 }
 add_action( 'plugins_loaded', 'hdfys_update' );

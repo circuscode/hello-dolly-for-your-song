@@ -3,8 +3,8 @@ Contributors: unmus, jordansilaen
 Tags: hello world, love, random, learning wordpress, admin
 Requires at least: 5.2
 Requires PHP: 7.0
-Tested up to: 6.2
-Stable tag: 0.18
+Tested up to: 6.5.2
+Stable tag: 0.19
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -100,6 +100,10 @@ Several admin pages like settings are excluded, because some plugins do not use 
 1. Options Page
 
 == Changelog ==
+
+= 0.19 =
+* april 2024
+* Security: Echo Escaping added
 
 = 0.18 =
 * april 2023
@@ -202,6 +206,9 @@ Several admin pages like settings are excluded, because some plugins do not use 
 * Running version
 
 == Upgrade Notice ==
+
+= 0.19 =
+This version is a security release (no new features, but more secure code).
 
 = 0.18 =
 This version is a maintenance release (no new features, but bugfixes).

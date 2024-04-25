@@ -34,7 +34,7 @@ function hdfys_gutenberg_block() {
 	$gutenberg_line = hdfys_get_anything();
 
 	// Add HTML Markup
-	$gutenberg_output = '<p class="hdfys gutenberg-block">'. $gutenberg_line .'</p>';
+	$gutenberg_output = '<p class="hdfys gutenberg-block">'.esc_html($gutenberg_line).'</p>';
 
 	// Process Filter
 	$gutenberg_output=apply_filters( 'hdfys_output_filter', $gutenberg_output );

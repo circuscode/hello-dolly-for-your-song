@@ -3,7 +3,7 @@ Contributors: unmus, jordansilaen
 Tags: hello world, love, random, learning wordpress, admin
 Requires at least: 5.2
 Requires PHP: 7.0
-Tested up to: 6.5.2
+Tested up to: 6.8
 Stable tag: 0.19
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html

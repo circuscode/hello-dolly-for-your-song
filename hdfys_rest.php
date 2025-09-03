@@ -55,6 +55,7 @@ class RESTful_Hello_Dolly_For_Your_Song {
 		register_rest_route( 'restful-hello-dolly-for-your-song', '/text', array(
 			'methods' => WP_REST_Server::READABLE,
 			'callback' => array( $this, 'rest_get_hello_dolly_for_your_song' ),
+			'permission_callback' => '__return_true',
 		) );
 	}
 	

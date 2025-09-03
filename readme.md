@@ -153,6 +153,11 @@ This project is licensed under the GPL3 License.
 
 ## Changelog
 
+### 0.20
+
+* september 2025
+* Security: REST API Permission Callback added
+
 ### 0.19
 
 * april 2024

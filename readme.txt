@@ -4,7 +4,7 @@ Tags: hello world, love, random, learning wordpress, admin
 Requires at least: 5.2
 Requires PHP: 7.0
 Tested up to: 6.8
-Stable tag: 0.19
+Stable tag: 0.20
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -100,6 +100,10 @@ Several admin pages like settings are excluded, because some plugins do not use 
 1. Options Page
 
 == Changelog ==
+
+= 0.20 =
+* september 2025
+* Security: REST API Permission Callback added
 
 = 0.19 =
 * april 2024
@@ -206,6 +210,9 @@ Several admin pages like settings are excluded, because some plugins do not use 
 * Running version
 
 == Upgrade Notice ==
+
+= 0.20 =
+This version is a security release (no new features, but more secure code).
 
 = 0.19 =
 This version is a security release (no new features, but more secure code).
